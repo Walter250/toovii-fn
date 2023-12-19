@@ -12,7 +12,7 @@ export default function Theme() {
     <DarkModeSwitch
       checked={isDarkMode}
       onChange={toggleDarkMode}
-      size={40}
+      size={35}
       moonColor="#faa41a"
       sunColor="#faa41a"
     />

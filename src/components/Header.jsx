@@ -3,7 +3,7 @@ import Theme from "./Theme";
 
 export default function Header() {
   return (
-    <section className="flex justify-between items-center px-8">
+    <section className="flex justify-between items-center px-8 text-white">
       <img className="w-28" src="/logo.png" alt="toovii logo" />
       <div className="flex justify-between items-center gap-6">
         <NavLink
