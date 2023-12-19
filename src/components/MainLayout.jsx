@@ -1,3 +1,11 @@
+import { Outlet } from "react-router-dom";
+import Header from "./Header";
+
 export default function MainLayout() {
-  return <h1>this is main layout</h1>;
+  return (
+    <section className="relative">
+      <Header />
+      <Outlet />
+    </section>
+  );
 }
