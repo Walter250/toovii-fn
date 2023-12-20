@@ -1,10 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
 import Theme from "./Theme";
 
 export default function Header() {
-  const theme = useSelector((state) => state.theme.value);
-  console.log(theme);
   return (
     <section className="flex justify-between items-center px-8 text-white bg-black/70">
       <div>

@@ -7,9 +7,11 @@ export default function AboutSection() {
     ? "text-white bg-black"
     : "text-black bg-white";
   return (
-    <article className={`${themeStyles} px-20 py-12 flex flex-col gap-20`}>
-      <section className="flex items-center gap-12">
-        <div className="w-1/2 flex flex-col gap-8">
+    <article
+      className={`${themeStyles} px-20 py-12 flex flex-col gap-20 md:px-10 sm:px-6`}
+    >
+      <section className="flex items-center gap-12 md:flex-col">
+        <div className="w-1/2 flex flex-col gap-8 md:w-full">
           <p className="font-bold text-5xl">Why Us?</p>
           <p className="text-lg">
             At TooVii, we redefine entertainment with affordability, variety,
@@ -26,18 +28,18 @@ export default function AboutSection() {
           </Link>
         </div>
         <img
-          className="w-1/2 h-96 object-cover"
+          className="w-1/2 h-96 object-cover md:w-full"
           src="/about.jpg"
           alt="about toovii image"
         />
       </section>
-      <section className="flex items-center gap-12">
+      <section className="flex items-center gap-12 md:flex-col">
         <img
-          className="w-1/2 h-96 object-cover"
+          className="w-1/2 h-96 object-cover md:w-full md:order-2"
           src="/resp.png"
           alt="toovii responsiveness image"
         />
-        <div className="w-1/2 flex flex-col gap-8">
+        <div className="w-1/2 flex flex-col gap-8 md:w-full md:order-1">
           <p className="font-bold text-5xl">Supported devices</p>
           <p className="text-lg">
             TooVii goes beyond boundaries. Our platform is meticulously crafted
