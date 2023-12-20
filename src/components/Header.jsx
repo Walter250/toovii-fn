@@ -6,7 +6,7 @@ export default function Header() {
   const theme = useSelector((state) => state.theme.value);
   console.log(theme);
   return (
-    <section className="flex justify-between items-center px-8 text-white">
+    <section className="flex justify-between items-center px-8 text-white bg-black/70">
       <div>
         <img className="w-28" src="/logo.png" alt="toovii logo" />
       </div>
