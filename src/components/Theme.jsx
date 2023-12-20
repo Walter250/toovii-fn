@@ -1,16 +1,22 @@
-import * as React from "react";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
+import { useDispatch, useSelector } from "react-redux";
+import { handleTheme } from "../features/theme";
 
 export default function Theme() {
-  const [isDarkMode, setDarkMode] = React.useState(false);
+  const theme = useSelector((state) => state.theme.value);
+  const dispatch = useDispatch();
 
   const toggleDarkMode = () => {
-    setDarkMode((prev) => !prev);
+    if (theme.isDarkMode) {
+      dispatch(handleTheme({ theme: "light", isDarkMode: false }));
+    } else {
+      dispatch(handleTheme({ theme: "dark", isDarkMode: true }));
+    }
   };
 
   return (
     <DarkModeSwitch
-      checked={isDarkMode}
+      checked={theme.isDarkMode}
       onChange={toggleDarkMode}
       size={35}
       moonColor="#faa41a"
