@@ -37,12 +37,33 @@ export default function Footer() {
           </div>
           <div className="flex flex-col">
             <p className="font-bold text-2xl mb-4">Links</p>
-            <Link to="/login">Login</Link>
-            <Link to="/about">About</Link>
-            <Link to="/pay">Payment Plans</Link>
-            <Link to="/privacy">Privacy Policy</Link>
-            <Link to="/contact">Contact</Link>
-            <Link to="/faq">FAQs</Link>
+            <Link className="hover:text-mainYellow hover:underline" to="/login">
+              Login
+            </Link>
+            <Link className="hover:text-mainYellow hover:underline" to="/about">
+              About
+            </Link>
+            <Link
+              className="hover:text-mainYellow hover:underline"
+              to="/payment"
+            >
+              Payment Plans
+            </Link>
+            <Link
+              className="hover:text-mainYellow hover:underline"
+              to="/privacy"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              className="hover:text-mainYellow hover:underline"
+              to="/contact"
+            >
+              Contact
+            </Link>
+            <Link className="hover:text-mainYellow hover:underline" to="/faq">
+              FAQs
+            </Link>
           </div>
           <div className="flex flex-col gap-2">
             <p className="font-bold text-2xl mb-4">Contacts</p>

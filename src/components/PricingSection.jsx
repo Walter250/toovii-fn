@@ -7,11 +7,11 @@ export default function PricingSection() {
     : "text-black bg-white";
   return (
     <article className={`${themeStyles} py-12`}>
-      <p className="text-center text-5xl font-bold">
+      <p className="text-center text-5xl font-bold md:text-3xl sm:text-2xl">
         Subscribe to our packages
       </p>
-      <section className="flex justify-center gap-12  mt-28">
-        <div className="w-96 pt-12 border border-mainYellow rounded-2xl relative h-fit">
+      <section className="flex justify-center gap-12  mt-28 md:flex-col md:items-center">
+        <div className="w-1/3 md:w-4/5 pt-12 border border-mainYellow rounded-2xl relative h-fit">
           <div className="py-10 px-5 flex flex-col items-center border-b border-b-mainYellow gap-6">
             <p className="border border-mainYellow text-mainYellow px-8 py-1 w-fit rounded-full">
               Base
@@ -47,12 +47,12 @@ export default function PricingSection() {
           <div
             className={`${
               theme.isDarkMode ? "bg-black" : "bg-white"
-            } border border-mainYellow w-16 h-16 grid place-content-center rounded-full absolute -top-8 left-40`}
+            } border border-mainYellow w-16 h-16 grid place-content-center rounded-full absolute -top-8 left-[44%]`}
           >
             <img className="" src="/3d.png" alt="" />
           </div>
         </div>
-        <div className="w-96 pt-12 border border-mainYellow rounded-2xl relative">
+        <div className="w-1/3 md:w-4/5 pt-12 border border-mainYellow rounded-2xl relative">
           <div className="py-10 px-5 flex flex-col items-center border-b border-b-mainYellow gap-6">
             <p className="border border-mainYellow text-mainYellow px-8 py-1 w-fit rounded-full">
               Premium
@@ -96,7 +96,7 @@ export default function PricingSection() {
           <div
             className={`${
               theme.isDarkMode ? "bg-black" : "bg-white"
-            } border border-mainYellow w-16 h-16 grid place-content-center rounded-full absolute -top-8 left-40`}
+            } border border-mainYellow w-16 h-16 grid place-content-center rounded-full absolute -top-8 left-[44%]`}
           >
             <img className="" src="/cells.png" alt="" />
           </div>

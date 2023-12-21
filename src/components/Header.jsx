@@ -1,12 +1,18 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import Theme from "./Theme";
 
 export default function Header() {
+  const location = useLocation();
+  console.log(location);
   return (
-    <section className="flex justify-between items-center px-8 text-white bg-black/70">
-      <div>
+    <section
+      className={`flex justify-between items-center px-8 text-white ${
+        location.pathname === "/" ? "bg-black/70" : "bg-black"
+      }`}
+    >
+      <Link to="/">
         <img className="w-28" src="/logo.png" alt="toovii logo" />
-      </div>
+      </Link>
       <div className="flex justify-between items-center gap-6">
         <NavLink
           to="/"
@@ -34,7 +40,7 @@ export default function Header() {
               isActive ? "text-mainYellow" : ""
             } font-semibold hover:text-mainYellow`
           }
-          to="/package"
+          to="/packages"
         >
           Packages
         </NavLink>
