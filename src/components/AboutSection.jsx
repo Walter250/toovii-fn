@@ -8,7 +8,7 @@ export default function AboutSection() {
     : "text-black bg-white";
   return (
     <article
-      className={`${themeStyles} px-20 py-12 flex flex-col gap-20 md:px-10 sm:px-6`}
+      className={`${themeStyles} px-20 py-12 flex flex-col gap-20 md:px-10 sm:px-6 relative`}
     >
       <section className="flex items-center gap-12 md:flex-col">
         <div className="w-1/2 flex flex-col gap-8 md:w-full">

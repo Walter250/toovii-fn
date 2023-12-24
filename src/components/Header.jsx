@@ -25,14 +25,14 @@ export default function Header() {
           Home
         </NavLink>
         <NavLink
-          to="/about"
+          to="/channels"
           className={({ isActive }) =>
             `${
               isActive ? "text-mainYellow" : ""
             } font-semibold hover:text-mainYellow`
           }
         >
-          About
+          Channels
         </NavLink>
         <NavLink
           className={({ isActive }) =>
@@ -43,16 +43,6 @@ export default function Header() {
           to="/packages"
         >
           Packages
-        </NavLink>
-        <NavLink
-          to="/payment"
-          className={({ isActive }) =>
-            `${
-              isActive ? "text-mainYellow" : ""
-            } font-semibold hover:text-mainYellow`
-          }
-        >
-          Payment methods
         </NavLink>
         <NavLink
           to="/contact"

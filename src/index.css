@@ -20,3 +20,7 @@
 html {
   scroll-behavior: smooth;
 }
+
+.radial {
+  background: radial-gradient(#faa41a, transparent);
+}
