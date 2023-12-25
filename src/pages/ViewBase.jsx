@@ -19,7 +19,9 @@ export default function ViewBase() {
             alt="base image"
           />
           <div className="h-full w-2/5 md:h-1/2 md:w-full flex flex-col justify-center items-center gap-6 border border-mainYellow/40">
-            <p className="text-2xl font-bold text-center">A FORMULA ACCESSIBLE TO ALL!</p>
+            <p className="text-2xl font-bold text-center">
+              A FORMULA ACCESSIBLE TO ALL!
+            </p>
             <p className="font-bold">
               <span className="font-bold text-3xl">3000</span> RWF/MONTH
             </p>
@@ -30,14 +32,16 @@ export default function ViewBase() {
         </section>
         <section className="py-12">
           <p className="font-bold text-4xl text-center">All Channels in Base</p>
-          <ChannelSection name="Sports" />
-          <ChannelSection name="Movies" />
-          <ChannelSection name="Music" />
-          <ChannelSection name="Entertainment" />
-          <ChannelSection name="Local ChannelSection" />
-          <ChannelSection name="Discovery" />
-          <ChannelSection name="Youth and Education" />
-          <ChannelSection name="Radio" />
+          <section className="flex flex-col gap-8 mt-8">
+            <ChannelSection name="Sports" />
+            <ChannelSection name="Movies" />
+            <ChannelSection name="Music" />
+            <ChannelSection name="Entertainment" />
+            <ChannelSection name="Local ChannelSection" />
+            <ChannelSection name="Discovery" />
+            <ChannelSection name="Youth and Education" />
+            <ChannelSection name="Radio" />
+          </section>
         </section>
       </section>
       <StreamingSection />

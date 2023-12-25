@@ -32,14 +32,16 @@ export default function ViewPrem() {
           <p className="font-bold text-4xl text-center">
             All Channels in Premium
           </p>
-          <ChannelSection name="Sports" />
-          <ChannelSection name="Movies" />
-          <ChannelSection name="Music" />
-          <ChannelSection name="Entertainment" />
-          <ChannelSection name="Local ChannelSection" />
-          <ChannelSection name="Discovery" />
-          <ChannelSection name="Youth and Education" />
-          <ChannelSection name="Radio" />
+          <section className="flex flex-col gap-8 mt-8">
+            <ChannelSection name="Sports" />
+            <ChannelSection name="Movies" />
+            <ChannelSection name="Music" />
+            <ChannelSection name="Entertainment" />
+            <ChannelSection name="Local ChannelSection" />
+            <ChannelSection name="Discovery" />
+            <ChannelSection name="Youth and Education" />
+            <ChannelSection name="Radio" />
+          </section>
         </section>
       </section>
       <StreamingSection />
