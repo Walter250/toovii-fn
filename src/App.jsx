@@ -16,6 +16,7 @@ import Privacy from "./pages/Privacy";
 import Channels from "./pages/Channels";
 import ViewBase from "./pages/ViewBase";
 import ViewPrem from "./pages/ViewPrem";
+import Payment from "./pages/Payment";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,6 +30,7 @@ const router = createBrowserRouter(
         <Route path="packages" element={<PackagesPage />} />
         <Route path="packages/base" element={<ViewBase />} />
         <Route path="packages/prem" element={<ViewPrem />} />
+        <Route path="payment" element={<Payment />} />
         <Route path="channels" element={<Channels />} />
         <Route path="privacy" element={<Privacy />} />
       </Route>

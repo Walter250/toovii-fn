@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import ChannelSection from "../components/ChannelsSection";
 import StreamingSection from "../components/StreamingSection";
 
 export default function ViewBase() {
+  const navigate = useNavigate();
   return (
     <article className="bg-black text-white pt-12">
       <section className="px-20 md:px-10 sm:px-6">
@@ -25,7 +27,12 @@ export default function ViewBase() {
             <p className="font-bold">
               <span className="font-bold text-3xl">3000</span> RWF/MONTH
             </p>
-            <button className="bg-mainYellow px-10 py-2 rounded-xl font-bold text-xl">
+            <button
+              className="bg-mainYellow px-10 py-2 rounded-xl font-bold text-xl"
+              onClick={() =>
+                navigate("/payment", { state: { id: 1, name: "base" } })
+              }
+            >
               SUBSCRIBE
             </button>
           </div>

@@ -3,7 +3,6 @@ import Theme from "./Theme";
 
 export default function Header() {
   const location = useLocation();
-  console.log(location);
   return (
     <section
       className={`flex justify-between items-center px-8 text-white border-b border-gray-700 ${
