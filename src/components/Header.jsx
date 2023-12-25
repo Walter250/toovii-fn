@@ -6,7 +6,7 @@ export default function Header() {
   console.log(location);
   return (
     <section
-      className={`flex justify-between items-center px-8 text-white ${
+      className={`flex justify-between items-center px-8 text-white border-b border-gray-700 ${
         location.pathname === "/" ? "bg-black/70" : "bg-black"
       }`}
     >

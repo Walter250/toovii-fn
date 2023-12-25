@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function PricingSection() {
+  const navigate = useNavigate();
   const theme = useSelector((state) => state.theme.value);
   const themeStyles = theme.isDarkMode
     ? "text-white bg-black"
@@ -39,7 +41,10 @@ export default function PricingSection() {
               <img className="w-7 object-contain" src="/dot.png" alt="tick" />
               <p className="text-xl">190+ Channels</p>
             </div>
-            <button className="flex items-center justify-center border border-mainYellow py-2 rounded-xl mt-3 gap-4">
+            <button
+              className="flex items-center justify-center border border-mainYellow py-2 rounded-xl mt-3 gap-4"
+              onClick={() => navigate("/packages/base")}
+            >
               <img src="/3d.png" alt="start" />
               <p className="font-semibold text-xl">Get Started</p>
             </button>
@@ -88,7 +93,10 @@ export default function PricingSection() {
               <img className="w-7 object-contain" src="/dot.png" alt="tick" />
               <p className="text-xl">Football news</p>
             </div>
-            <button className="flex items-center justify-center border border-mainYellow py-2 rounded-xl mt-3 gap-4">
+            <button
+              className="flex items-center justify-center border border-mainYellow py-2 rounded-xl mt-3 gap-4"
+              onClick={() => navigate("/packages/prem")}
+            >
               <img src="/cells.png" alt="start" />
               <p className="font-semibold text-xl">Get Started</p>
             </button>

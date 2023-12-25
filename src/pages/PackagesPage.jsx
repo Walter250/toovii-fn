@@ -1,3 +1,11 @@
+import PricingSection from "../components/PricingSection";
+import StreamingSection from "../components/StreamingSection";
+
 export default function PackagePage() {
-  return <h1>this is packages page</h1>;
+  return (
+    <article>
+      <PricingSection />
+      <StreamingSection />
+    </article>
+  );
 }
