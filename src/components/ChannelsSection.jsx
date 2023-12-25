@@ -9,7 +9,7 @@ export default function ChannelSection({ name }) {
   }
   return (
     <div
-      className="bg-[#242424] w-full mt-12 flex flex-col gap-4 items-center py-6 transition-all duration-300"
+      className="bg-[#242424] w-full flex flex-col gap-4 items-center py-6 transition-all duration-300"
       onClick={handleOpen}
     >
       <div className="flex justify-between w-full px-4">
