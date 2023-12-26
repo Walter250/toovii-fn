@@ -28,8 +28,8 @@ export default function AboutSection() {
           </Link>
         </div>
         <img
-          className="w-1/2 h-96 object-cover md:w-full"
-          src="/about.jpg"
+          className="w-1/2 h-96 object-contain md:w-full"
+          src="/about.png"
           alt="about toovii image"
         />
       </section>

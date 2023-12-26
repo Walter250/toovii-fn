@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import ChannelSection from "../components/ChannelsSection";
 import StreamingSection from "../components/StreamingSection";
+import { Spin as Hamburger } from "hamburger-react";
 
 export default function ViewBase() {
   const navigate = useNavigate();
@@ -52,6 +53,7 @@ export default function ViewBase() {
         </section>
       </section>
       <StreamingSection />
+      <Hamburger />
     </article>
   );
 }
