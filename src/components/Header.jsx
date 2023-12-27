@@ -53,6 +53,16 @@ export default function Header() {
           Home
         </NavLink>
         <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            `${
+              isActive ? "text-mainYellow" : ""
+            } font-semibold hover:text-mainYellow`
+          }
+        >
+          About
+        </NavLink>
+        <NavLink
           to="/channels"
           className={({ isActive }) =>
             `${

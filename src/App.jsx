@@ -17,6 +17,7 @@ import Channels from "./pages/Channels";
 import ViewBase from "./pages/ViewBase";
 import ViewPrem from "./pages/ViewPrem";
 import Payment from "./pages/Payment";
+import About from "./pages/About";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
       <Route element={<MainLayout />}>
         <Route index element={<Home />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="about" element={<About />} />
         <Route path="faq" element={<Faq />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<Signup />} />

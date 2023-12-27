@@ -8,7 +8,7 @@ export default function Menu() {
     : "text-black bg-blue-50";
   return (
     <section
-      className={`${themeStyles} w-4/5 h-screen absolute top-0 left-0 px-6 overflow-hidden flex flex-col justify-between items-center py-8`}
+      className={`${themeStyles} w-4/5 h-screen absolute top-0 left-0 px-6 overflow-hidden flex flex-col justify-between items-center py-8 z-40`}
     >
       <img className="w-28 object-contain" src="logo.png" alt="main logo" />
       <div className="flex flex-col justify-between items-center gap-6 w-full">
