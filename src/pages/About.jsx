@@ -7,7 +7,7 @@ export default function About() {
     : "text-black bg-white";
 
   return (
-    <article className={`${themeStyles}`}>
+    <article className={`${themeStyles} pb-12`}>
       <section className="relative w-full h-96 grid place-content-center">
         <p className="z-50 font-bold text-6xl md:text-5xl sm:text-4xl text-mainYellow">
           About Us
