@@ -132,7 +132,29 @@ export default function About() {
           alt="about team"
         />
       </article>
-      <article className="h-40 w-full bg-red-400">Our Trustees</article>
+      <article className="w-full px-20 md:px-10 sm:px-6 flex flex-col gap-8 items-center">
+        <section className="">
+          <p
+            className={`${
+              theme.isDarkMode ? "shadow-white/20" : "shadow-black/30"
+            } shadow-lg border border-gray-400 px-10 py-[6px] font-semibold text-center w-fit rounded-xl`}
+          >
+            Our Trustees
+          </p>
+        </section>
+        <p className="text-center w-4/5">
+          TooVii is proud to collaborate with a network of visionary sponsors
+          who share our commitment to revolutionizing entertainment. Their
+          support empowers us to bring you a premium streaming experience,
+          making quality content accessible to audiences worldwide.
+        </p>
+        <div className="flex justify-between w-full">
+          <img className="w-28 object-contain" src="/sharp.png" alt="logo" />
+          <img className="w-28 object-contain" src="/sharp.png" alt="logo" />
+          <img className="w-28 object-contain" src="/sharp.png" alt="logo" />
+          <img className="w-28 object-contain" src="/sharp.png" alt="logo" />
+        </div>
+      </article>
       <article className="px-20 md:px-10 sm:px-6 flex flex-col items-center gap-10">
         <section className="">
           <p
