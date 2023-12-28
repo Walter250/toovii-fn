@@ -12,8 +12,10 @@ export default {
     extend: {
       colors: {
         mainYellow: "#faa41a",
-        mainDark: "#0D1921",
+        mainDark: "#0B1319",
+        secDark: "#1f2e3b",
         mainLight: "#FFFFF4",
+        secLight: "#E6E6C9",
       },
     },
   },
