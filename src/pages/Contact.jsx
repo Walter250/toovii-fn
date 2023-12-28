@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 export default function ContactPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <article className="px-20 md:px-10 sm:px-6 my-8">
       <h1 className="font-bold text-4xl md:text-3xl sm:text-2xl text-center mb-6">
@@ -64,7 +69,7 @@ export default function ContactPage() {
           </form>
         </section>
       </section>
-      <section className="bg-black p-4 md:hidden">
+      <section className="bg-mainDark p-4 md:hidden">
         <div className="text-white flex justify-around gap-10 mb-6">
           <div className="flex flex-col font-semibold items-center">
             <img className="w-12" src="/location.png" alt="" />

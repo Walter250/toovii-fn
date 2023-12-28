@@ -30,7 +30,7 @@ export default function Header() {
     <section
       onClick={closeMenus}
       className={`flex justify-between items-center px-8 md:px-4 sm:px-1 text-white border-b border-gray-700 ${
-        location.pathname === "/" ? "bg-black/70" : "bg-black"
+        location.pathname === "/" ? "bg-mainDark/70" : "bg-mainDark"
       }`}
     >
       <Link to="/">

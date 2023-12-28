@@ -2,11 +2,15 @@ import { useNavigate } from "react-router-dom";
 import ChannelSection from "../components/ChannelsSection";
 import StreamingSection from "../components/StreamingSection";
 import { Spin as Hamburger } from "hamburger-react";
+import { useEffect } from "react";
 
 export default function ViewBase() {
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
-    <article className="bg-black text-white pt-12">
+    <article className="bg-mainDark text-white pt-12">
       <section className="px-20 md:px-10 sm:px-6">
         <h1 className="font-bold text-4xl mb-4 text-center">Base</h1>
         <p className="text-center">

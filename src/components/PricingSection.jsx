@@ -5,8 +5,8 @@ export default function PricingSection() {
   const navigate = useNavigate();
   const theme = useSelector((state) => state.theme.value);
   const themeStyles = theme.isDarkMode
-    ? "text-white bg-black"
-    : "text-black bg-white";
+    ? "text-white bg-mainDark"
+    : "text-mainDark bg-white";
   return (
     <article className={`${themeStyles} py-12`}>
       <p className="text-center text-5xl font-bold md:text-3xl sm:text-2xl">
@@ -22,7 +22,6 @@ export default function PricingSection() {
               <span className="text-4xl font-bold text-mainYellow">3 USD</span>
               /mo
             </p>
-            <p className="font-semibold text-xl">Best For Solo</p>
           </div>
           <section className="flex flex-col px-5 py-10 gap-7">
             <div className="flex items-center gap-4">
@@ -51,7 +50,7 @@ export default function PricingSection() {
           </section>
           <div
             className={`${
-              theme.isDarkMode ? "bg-black" : "bg-white"
+              theme.isDarkMode ? "bg-mainDark" : "bg-white"
             } border border-mainYellow w-16 h-16 grid place-content-center rounded-full absolute -top-8 left-[44%]`}
           >
             <img className="" src="/3d.png" alt="" />
@@ -66,7 +65,6 @@ export default function PricingSection() {
               <span className="text-4xl font-bold text-mainYellow">7 USD</span>
               /mo
             </p>
-            <p className="font-semibold text-xl">Best For Family</p>
           </div>
           <section className="flex flex-col px-5 py-10 gap-7">
             <div className="flex items-center gap-4">
@@ -103,7 +101,7 @@ export default function PricingSection() {
           </section>
           <div
             className={`${
-              theme.isDarkMode ? "bg-black" : "bg-white"
+              theme.isDarkMode ? "bg-mainDark" : "bg-white"
             } border border-mainYellow w-16 h-16 grid place-content-center rounded-full absolute -top-8 left-[44%]`}
           >
             <img className="" src="/cells.png" alt="" />

@@ -4,8 +4,8 @@ import { Link, NavLink } from "react-router-dom";
 export default function Menu() {
   const theme = useSelector((state) => state.theme.value);
   const themeStyles = theme.isDarkMode
-    ? "text-white bg-black"
-    : "text-black bg-blue-50";
+    ? "text-white bg-mainDark"
+    : "text-mainDark bg-blue-50";
   return (
     <section
       className={`${themeStyles} w-4/5 h-screen absolute top-0 left-0 px-6 overflow-hidden flex flex-col justify-between items-center py-8 z-40`}

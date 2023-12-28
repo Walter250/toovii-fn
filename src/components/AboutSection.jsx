@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 export default function AboutSection() {
   const theme = useSelector((state) => state.theme.value);
   const themeStyles = theme.isDarkMode
-    ? "text-white bg-black"
-    : "text-black bg-white";
+    ? "text-white bg-mainDark"
+    : "text-mainDark bg-white";
   return (
     <article
       className={`${themeStyles} px-20 py-12 flex flex-col gap-20 md:px-10 sm:px-6 relative`}
@@ -21,10 +21,10 @@ export default function AboutSection() {
             stands out as your top choice for on-the-go entertainment.
           </p>
           <Link
-            to="/plans"
+            to="/about"
             className="font-semibold text-2xl bg-mainYellow px-10 py-2 rounded-xl w-fit"
           >
-            View Plans
+            Learn More
           </Link>
         </div>
         <img
@@ -51,7 +51,7 @@ export default function AboutSection() {
             device.
           </p>
           <Link
-            to="/plans"
+            to="/packages#"
             className="font-semibold text-2xl bg-mainYellow px-10 py-2 rounded-xl w-fit"
           >
             View Plans

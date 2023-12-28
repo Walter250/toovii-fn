@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, redirect, useNavigate } from "react-router-dom";
 // import LoadingSpinner from "../assets/LoadingSpinner";
 
@@ -24,33 +24,36 @@ export default function Login() {
 
   async function handleLogin(e) {
     e.preventDefault();
-    if (!userInfo.password || !userInfo.username) {
-      setFormError(true);
-    } else {
-      setIsLoading(true);
-      const formData = new URLSearchParams();
-      for (const [key, value] of Object.entries(userInfo)) {
-        formData.append(key, value);
-      }
-      const response = await fetch("https://samplw/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: formData,
-      });
-      const userData = await response.json();
-      setIsLoading(false);
-      if (response.status === 200) {
-        localStorage.setItem("user", JSON.stringify(userData));
-        return navigate("/feeds");
-      } else {
-        setIsLoading(false);
-        setIsError(true);
-      }
-    }
+    // if (!userInfo.password || !userInfo.username) {
+    //   setFormError(true);
+    // } else {
+    //   setIsLoading(true);
+    //   const formData = new URLSearchParams();
+    //   for (const [key, value] of Object.entries(userInfo)) {
+    //     formData.append(key, value);
+    //   }
+    //   const response = await fetch("https://samplw/login", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/x-www-form-urlencoded",
+    //     },
+    //     body: formData,
+    //   });
+    //   const userData = await response.json();
+    //   setIsLoading(false);
+    //   if (response.status === 200) {
+    //     localStorage.setItem("user", JSON.stringify(userData));
+    //     return navigate("/feeds");
+    //   } else {
+    //     setIsLoading(false);
+    //     setIsError(true);
+    //   }
+    // }
   }
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <article className="flex max-h-[85vh] text-dark-200 rounded-2xl overflow-hidden w-3/5 md:w-11/12 mx-auto mb-20 mt-4 gap-12">
       <section className="w-1/2 md:w-full bg-light-200 flex flex-col gap-8 py-4 justify-around items-center">
