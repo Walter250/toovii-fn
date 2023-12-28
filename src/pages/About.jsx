@@ -31,7 +31,7 @@ export default function About() {
         <section className="-mb-12">
           <p
             className={`${
-              theme.isDarkMode ? "shadow-mainLight/20" : "shadow-mainDark/30"
+              theme.isDarkMode ? "shadow-secLight/20" : "shadow-secDark/30"
             } shadow-lg border border-gray-400 px-10 py-[6px] font-semibold text-center w-fit rounded-xl`}
           >
             About us
@@ -66,8 +66,8 @@ export default function About() {
           <div
             className={`${
               theme.isDarkMode
-                ? "shadow-mainLight/30 md:shadow-mainLight/10"
-                : "shadow-mainDark/30 md:shadow-mainDark/20"
+                ? "shadow-secLight/30 md:shadow-secLight/10"
+                : "shadow-secDark/30 md:shadow-secDark/20"
             } w-1/3 flex justify-start items-center gap-6 shadow-xl rounded-2xl px-5 py-4 md:w-full`}
           >
             <div className="w-16 h-16 rounded-full bg-mainYellow grid place-content-center">
@@ -88,8 +88,8 @@ export default function About() {
           <div
             className={`${
               theme.isDarkMode
-                ? "shadow-mainLight/30 md:shadow-mainLight/10"
-                : "shadow-mainDark/30 md:shadow-mainDark/20"
+                ? "shadow-secLight/30 md:shadow-secLight/10"
+                : "shadow-secDark/30 md:shadow-secDark/20"
             } w-1/3 flex justify-start items-center gap-6 shadow-xl rounded-2xl px-5 py-4 md:w-full`}
           >
             <div className="w-16 h-16 rounded-full bg-mainYellow grid place-content-center">
@@ -110,8 +110,8 @@ export default function About() {
           <div
             className={`${
               theme.isDarkMode
-                ? "shadow-mainLight/30 md:shadow-mainLight/10"
-                : "shadow-mainDark/30 md:shadow-mainDark/20"
+                ? "shadow-secLight/30 md:shadow-secLight/10"
+                : "shadow-secDark/30 md:shadow-secDark/20"
             } w-1/3 flex justify-start items-center gap-6 shadow-xl rounded-2xl px-5 py-4 md:w-full`}
           >
             <div className="w-16 h-16 rounded-full bg-mainYellow grid place-content-center">
@@ -140,7 +140,7 @@ export default function About() {
         <section className="">
           <p
             className={`${
-              theme.isDarkMode ? "shadow-mainLight/20" : "shadow-mainDark/30"
+              theme.isDarkMode ? "shadow-secLight/20" : "shadow-secDark/30"
             } shadow-lg border border-gray-400 px-10 py-[6px] font-semibold text-center w-fit rounded-xl`}
           >
             Our Trustees
@@ -163,7 +163,7 @@ export default function About() {
         <section className="">
           <p
             className={`${
-              theme.isDarkMode ? "shadow-mainLight/20" : "shadow-mainDark/30"
+              theme.isDarkMode ? "shadow-secLight/20" : "shadow-secDark/30"
             } shadow-lg border border-gray-400 px-10 py-[6px] font-semibold text-center w-fit rounded-xl`}
           >
             Our Team
