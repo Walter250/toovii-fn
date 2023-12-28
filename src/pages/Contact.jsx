@@ -1,11 +1,17 @@
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 export default function ContactPage() {
+  const theme = useSelector((state) => state.theme.value);
+  const themeStyles = theme.isDarkMode
+    ? "text-mainLight bg-mainDark"
+    : "text-mainDark bg-mainLight";
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <article className="px-20 md:px-10 sm:px-6 my-8">
+    <article className={`${themeStyles} px-20 md:px-10 sm:px-6 py-8`}>
       <h1 className="font-bold text-4xl md:text-3xl sm:text-2xl text-center mb-6">
         Contact Us
       </h1>
@@ -17,13 +23,19 @@ export default function ContactPage() {
             alt="contact image"
           />
         </div>
-        <section className="bg-gray-100 w-1/2 md:w-full p-6 my-auto">
+        <section
+          className={`${
+            theme.isDarkMode ? "bg-secDark" : "bg-secLight"
+          } w-1/2 md:w-full p-6 my-auto`}
+        >
           <form className="flex flex-col gap-6 w-full">
             <div className="flex justify-between gap-4">
               <label className="flex flex-col w-1/2 font-semibold gap-2">
                 Firstname
                 <input
-                  className="py-2 px-4 placeholder:font-normal rounded-lg"
+                  className={`${
+                    theme.isDarkMode ? "bg-mainDark" : "bg-mainLight"
+                  } py-2 px-4 placeholder:font-normal rounded-lg`}
                   placeholder="Firstname"
                   type="text"
                 />
@@ -31,7 +43,9 @@ export default function ContactPage() {
               <label className="flex flex-col w-1/2 font-semibold gap-2">
                 Lastname
                 <input
-                  className="py-2 px-4 placeholder:font-normal rounded-lg"
+                  className={`${
+                    theme.isDarkMode ? "bg-mainDark" : "bg-mainLight"
+                  } py-2 px-4 placeholder:font-normal rounded-lg`}
                   placeholder="Lastname"
                   type="text"
                 />
@@ -41,7 +55,9 @@ export default function ContactPage() {
               <label className="flex flex-col w-1/2 font-semibold gap-2">
                 Email
                 <input
-                  className="py-2 px-4 placeholder:font-normal rounded-lg"
+                  className={`${
+                    theme.isDarkMode ? "bg-mainDark" : "bg-mainLight"
+                  } py-2 px-4 placeholder:font-normal rounded-lg`}
                   placeholder="Emain"
                   type="email"
                 />
@@ -49,7 +65,9 @@ export default function ContactPage() {
               <label className="flex flex-col w-1/2 font-semibold gap-2">
                 Phone Number
                 <input
-                  className="py-2 px-4 placeholder:font-normal rounded-lg"
+                  className={`${
+                    theme.isDarkMode ? "bg-mainDark" : "bg-mainLight"
+                  } py-2 px-4 placeholder:font-normal rounded-lg`}
                   placeholder="Phone Number"
                   type="text"
                 />
@@ -58,7 +76,9 @@ export default function ContactPage() {
             <label className="font-semibold">
               Message
               <textarea
-                className="w-full h-40 placeholder:font-normal px-4 py-2 rounded-lg mt-2"
+                className={`${
+                  theme.isDarkMode ? "bg-mainDark" : "bg-mainLight"
+                } w-full h-40 placeholder:font-normal px-4 py-2 rounded-lg mt-2`}
                 name="message"
                 placeholder="Write your message"
               ></textarea>
@@ -69,8 +89,12 @@ export default function ContactPage() {
           </form>
         </section>
       </section>
-      <section className="bg-mainDark p-4 md:hidden">
-        <div className="text-mainLight flex justify-around gap-10 mb-6">
+      <section
+        className={`${
+          theme.isDarkMode ? "bg-secDark" : "bg-secLight"
+        } p-4 md:hidden`}
+      >
+        <div className="flex justify-around gap-10 mb-6">
           <div className="flex flex-col font-semibold items-center">
             <img className="w-12" src="/location.png" alt="" />
             <p>Location</p>

@@ -1,7 +1,13 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 /* eslint-disable react/prop-types */
 export default function QuestionCard({ question, answer }) {
+  const theme = useSelector((state) => state.theme.value);
+  const themeStyles = theme.isDarkMode
+    ? "text-secLight bg-secDark"
+    : "text-secDark bg-secLight";
+
   const [isOpen, setIsOpen] = useState(false);
 
   function handleOpening() {
@@ -10,7 +16,7 @@ export default function QuestionCard({ question, answer }) {
   return (
     <section className="w-2/5 md:w-full h-fit">
       <div
-        className="text-mainLight flex justify-between items-center px-4 py-2 bg-mainDark rounded-2xl"
+        className={`${themeStyles} text-mainLight flex justify-between items-center px-4 py-2 bg-mainDark rounded-2xl`}
         onClick={handleOpening}
       >
         <p>{question}</p>
