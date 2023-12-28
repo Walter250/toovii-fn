@@ -70,7 +70,7 @@ export default function ContactPage() {
         </section>
       </section>
       <section className="bg-mainDark p-4 md:hidden">
-        <div className="text-white flex justify-around gap-10 mb-6">
+        <div className="text-mainLight flex justify-around gap-10 mb-6">
           <div className="flex flex-col font-semibold items-center">
             <img className="w-12" src="/location.png" alt="" />
             <p>Location</p>

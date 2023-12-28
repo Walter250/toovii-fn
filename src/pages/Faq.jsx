@@ -6,7 +6,7 @@ export default function Faq() {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <section className="px-20 bg-white my-12 md:px-10 sm:px-6">
+    <section className="px-20 bg-mainLight my-12 md:px-10 sm:px-6">
       <ControlledAccordions />
     </section>
   );

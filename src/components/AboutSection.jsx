@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 export default function AboutSection() {
   const theme = useSelector((state) => state.theme.value);
   const themeStyles = theme.isDarkMode
-    ? "text-white bg-mainDark"
-    : "text-mainDark bg-white";
+    ? "text-mainLight bg-mainDark"
+    : "text-mainDark bg-mainLight";
   return (
     <article
       className={`${themeStyles} px-20 py-12 flex flex-col gap-20 md:px-10 sm:px-6 relative`}

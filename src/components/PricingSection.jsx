@@ -5,8 +5,8 @@ export default function PricingSection() {
   const navigate = useNavigate();
   const theme = useSelector((state) => state.theme.value);
   const themeStyles = theme.isDarkMode
-    ? "text-white bg-mainDark"
-    : "text-mainDark bg-white";
+    ? "text-mainLight bg-mainDark"
+    : "text-mainDark bg-mainLight";
   return (
     <article className={`${themeStyles} py-12`}>
       <p className="text-center text-5xl font-bold md:text-3xl sm:text-2xl">
@@ -50,7 +50,7 @@ export default function PricingSection() {
           </section>
           <div
             className={`${
-              theme.isDarkMode ? "bg-mainDark" : "bg-white"
+              theme.isDarkMode ? "bg-mainDark" : "bg-mainLight"
             } border border-mainYellow w-16 h-16 grid place-content-center rounded-full absolute -top-8 left-[44%]`}
           >
             <img className="" src="/3d.png" alt="" />
@@ -101,7 +101,7 @@ export default function PricingSection() {
           </section>
           <div
             className={`${
-              theme.isDarkMode ? "bg-mainDark" : "bg-white"
+              theme.isDarkMode ? "bg-mainDark" : "bg-mainLight"
             } border border-mainYellow w-16 h-16 grid place-content-center rounded-full absolute -top-8 left-[44%]`}
           >
             <img className="" src="/cells.png" alt="" />

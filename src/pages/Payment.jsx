@@ -10,7 +10,7 @@ export default function Payment() {
   }, []);
   return (
     <article className="bg-mainDark px-20 md:px-10 sm:px-6">
-      <section className="text-white flex justify-between">
+      <section className="text-mainLight flex justify-between">
         <div className="flex items-center gap-4">
           <div className="font-bold text-lg bg-[#2e2e2e] w-10 h-10 grid place-content-center rounded-full">
             {step === 1 ? (

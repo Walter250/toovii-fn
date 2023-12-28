@@ -12,13 +12,13 @@ export default function Footer() {
           join now and be part of the next level in streaming.
         </p>
         <Link
-          className="px-10 py-2 bg-mainDark text-white rounded-xl font-semibold"
+          className="px-10 py-2 bg-mainDark text-mainLight rounded-xl font-semibold"
           to="/signup"
         >
           Get Started
         </Link>
       </section>
-      <section className="w-full py-6 px-12 bg-mainDark text-white md:px-10 sm:px-6">
+      <section className="w-full py-6 px-12 bg-mainDark text-mainLight md:px-10 sm:px-6">
         <section className="flex justify-around border-b-2 pb-8 md:flex-col gap-8">
           <div className="w-1/4 flex flex-col gap-4 md:w-full">
             <Link

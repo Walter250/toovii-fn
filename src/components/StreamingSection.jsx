@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 export default function StreamingSection() {
   const theme = useSelector((state) => state.theme.value);
   const themeStyles = theme.isDarkMode
-    ? "text-white bg-mainDark"
-    : "text-mainDark bg-white";
+    ? "text-mainLight bg-mainDark"
+    : "text-mainDark bg-mainLight";
 
   return (
     <article className={`${themeStyles} py-16`}>

@@ -10,7 +10,7 @@ export default function QuestionCard({ question, answer }) {
   return (
     <section className="w-2/5 md:w-full h-fit">
       <div
-        className="text-white flex justify-between items-center px-4 py-2 bg-mainDark rounded-2xl"
+        className="text-mainLight flex justify-between items-center px-4 py-2 bg-mainDark rounded-2xl"
         onClick={handleOpening}
       >
         <p>{question}</p>

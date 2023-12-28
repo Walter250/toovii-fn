@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 export default function About() {
   const theme = useSelector((state) => state.theme.value);
   const themeStyles = theme.isDarkMode
-    ? "text-white bg-mainDark"
-    : "text-mainDark bg-white";
+    ? "text-mainLight bg-mainDark"
+    : "text-mainDark bg-mainLight";
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -23,7 +23,7 @@ export default function About() {
         />
         <div
           className={`${
-            theme.isDarkMode ? "bg-mainDark/40" : "bg-white/40"
+            theme.isDarkMode ? "bg-mainDark/40" : "bg-mainLight/40"
           } w-full h-full absolute top-0 left-0`}
         ></div>
       </section>
@@ -31,7 +31,7 @@ export default function About() {
         <section className="-mb-12">
           <p
             className={`${
-              theme.isDarkMode ? "shadow-white/20" : "shadow-mainDark/30"
+              theme.isDarkMode ? "shadow-mainLight/20" : "shadow-mainDark/30"
             } shadow-lg border border-gray-400 px-10 py-[6px] font-semibold text-center w-fit rounded-xl`}
           >
             About us
@@ -66,7 +66,7 @@ export default function About() {
           <div
             className={`${
               theme.isDarkMode
-                ? "shadow-white/30 md:shadow-white/10"
+                ? "shadow-mainLight/30 md:shadow-mainLight/10"
                 : "shadow-mainDark/30 md:shadow-mainDark/20"
             } w-1/3 flex justify-start items-center gap-6 shadow-xl rounded-2xl px-5 py-4 md:w-full`}
           >
@@ -88,7 +88,7 @@ export default function About() {
           <div
             className={`${
               theme.isDarkMode
-                ? "shadow-white/30 md:shadow-white/10"
+                ? "shadow-mainLight/30 md:shadow-mainLight/10"
                 : "shadow-mainDark/30 md:shadow-mainDark/20"
             } w-1/3 flex justify-start items-center gap-6 shadow-xl rounded-2xl px-5 py-4 md:w-full`}
           >
@@ -110,7 +110,7 @@ export default function About() {
           <div
             className={`${
               theme.isDarkMode
-                ? "shadow-white/30 md:shadow-white/10"
+                ? "shadow-mainLight/30 md:shadow-mainLight/10"
                 : "shadow-mainDark/30 md:shadow-mainDark/20"
             } w-1/3 flex justify-start items-center gap-6 shadow-xl rounded-2xl px-5 py-4 md:w-full`}
           >
@@ -140,7 +140,7 @@ export default function About() {
         <section className="">
           <p
             className={`${
-              theme.isDarkMode ? "shadow-white/20" : "shadow-mainDark/30"
+              theme.isDarkMode ? "shadow-mainLight/20" : "shadow-mainDark/30"
             } shadow-lg border border-gray-400 px-10 py-[6px] font-semibold text-center w-fit rounded-xl`}
           >
             Our Trustees
@@ -163,7 +163,7 @@ export default function About() {
         <section className="">
           <p
             className={`${
-              theme.isDarkMode ? "shadow-white/20" : "shadow-mainDark/30"
+              theme.isDarkMode ? "shadow-mainLight/20" : "shadow-mainDark/30"
             } shadow-lg border border-gray-400 px-10 py-[6px] font-semibold text-center w-fit rounded-xl`}
           >
             Our Team
@@ -192,7 +192,7 @@ export default function About() {
               />
               <div
                 className={`${
-                  theme.isDarkMode ? "bg-mainDark/30" : "bg-white/30"
+                  theme.isDarkMode ? "bg-mainDark/30" : "bg-mainLight/30"
                 } w-full h-full bg-mainDark absolute top-0 left-0 hidden group-hover:grid place-content-center transition-all duration-200`}
               >
                 {" "}
@@ -212,7 +212,7 @@ export default function About() {
               />
               <div
                 className={`${
-                  theme.isDarkMode ? "bg-mainDark/30" : "bg-white/30"
+                  theme.isDarkMode ? "bg-mainDark/30" : "bg-mainLight/30"
                 } w-full h-full bg-mainDark absolute top-0 left-0 hidden place-content-center group-hover:grid transition-all duration-200`}
               >
                 <div className="flex flex-col items-center">
@@ -229,7 +229,7 @@ export default function About() {
               />
               <div
                 className={`${
-                  theme.isDarkMode ? "bg-mainDark/30" : "bg-white/30"
+                  theme.isDarkMode ? "bg-mainDark/30" : "bg-mainLight/30"
                 } w-full h-full bg-mainDark absolute top-0 left-0 hidden place-content-center group-hover:grid transition-all duration-200`}
               >
                 <div className="flex flex-col items-center">
