@@ -17,7 +17,7 @@ export default function Menu() {
           className={({ isActive }) =>
             `${
               isActive ? "text-mainYellow" : ""
-            } font-semibold hover:text-mainYellow w-full text-center py-2 hover:bg-[#242424] border-b border-mainYellow`
+            } font-semibold hover:text-mainYellow w-full text-center py-2 hover:bg-secDark border-b border-mainYellow`
           }
         >
           Home
@@ -27,7 +27,7 @@ export default function Menu() {
           className={({ isActive }) =>
             `${
               isActive ? "text-mainYellow" : ""
-            } font-semibold hover:text-mainYellow w-full text-center py-2 hover:bg-[#242424] border-b border-mainYellow`
+            } font-semibold hover:text-mainYellow w-full text-center py-2 hover:bg-secDark border-b border-mainYellow`
           }
         >
           Channels
@@ -36,7 +36,7 @@ export default function Menu() {
           className={({ isActive }) =>
             `${
               isActive ? "text-mainYellow" : ""
-            } font-semibold hover:text-mainYellow w-full text-center py-2 hover:bg-[#242424] border-b border-mainYellow`
+            } font-semibold hover:text-mainYellow w-full text-center py-2 hover:bg-secDark border-b border-mainYellow`
           }
           to="/packages"
         >
@@ -47,7 +47,7 @@ export default function Menu() {
           className={({ isActive }) =>
             `${
               isActive ? "text-mainYellow" : ""
-            } font-semibold hover:text-mainYellow w-full text-center py-2 hover:bg-[#242424] border-b border-mainYellow`
+            } font-semibold hover:text-mainYellow w-full text-center py-2 hover:bg-secDark border-b border-mainYellow`
           }
         >
           Contacts
@@ -57,7 +57,7 @@ export default function Menu() {
           className={({ isActive }) =>
             `${
               isActive ? "text-mainYellow" : ""
-            } font-semibold hover:text-mainYellow w-full text-center py-2 hover:bg-[#242424] border-b border-mainYellow`
+            } font-semibold hover:text-mainYellow w-full text-center py-2 hover:bg-secDark border-b border-mainYellow`
           }
         >
           FAQ
@@ -67,7 +67,7 @@ export default function Menu() {
           className={({ isActive }) =>
             `${
               isActive ? "text-mainYellow" : ""
-            } font-semibold hover:text-mainYellow w-full text-center py-2 hover:bg-[#242424] border-b border-mainYellow`
+            } font-semibold hover:text-mainYellow w-full text-center py-2 hover:bg-secDark border-b border-mainYellow`
           }
         >
           Privacy Policy

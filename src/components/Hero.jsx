@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <section className="text-mainLight w-full h-[80vh] md:h-[100vh] flex flex-col justify-center items-start gap-8 bg-mainDark/70 px-20 md:px-4">
+    <section className="text-mainLight w-full h-[80vh] md:h-[100vh] flex flex-col justify-center items-start gap-8 bg-mainDark/70 px-20 md:px-4 -mb-20">
       <h1 className="font-bold text-5xl md:text-4xl sm:text-3xl">
         With you everywhere
       </h1>
