@@ -1,18 +1,27 @@
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 export default function Privacy() {
+  const theme = useSelector((state) => state.theme.value);
+  const themeStyles = theme.isDarkMode
+    ? "text-mainLight bg-mainDark"
+    : "text-mainDark bg-mainLight";
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <article className="px-20 md:px-10 sm:px-6 text-lg text-mainDark/70 py-6">
+    <article className={`${themeStyles} px-20 md:px-10 sm:px-6 text-lg py-6`}>
+      <p className="font-bold text-4xl text-center mb-8 md:text-3xl sm:text-2xl">
+        Privacy Policy
+      </p>
       <p>
         This Privacy Policy governs the manner in which Toovii collects, uses,
         maintains and discloses information collected from users (each, a
         “User”) of the Toovii website (“Site”). This privacy policy applies to
         the Site and all products and services offered by Toovii.
       </p>
-      <p className="font-bold text-xl text-mainDark my-4">
+      <p className="font-bold text-xl my-4">
         Personal identification information
       </p>
       <p>
@@ -29,7 +38,7 @@ export default function Privacy() {
         personal identification information, except that it may prevent them
         from engaging in certain Site related activities.
       </p>
-      <p className="font-bold text-xl text-mainDark my-4">
+      <p className="font-bold text-xl my-4">
         Non-personal identification information
       </p>
       <p>
@@ -40,7 +49,7 @@ export default function Privacy() {
         as the operating system and the Internet service providers utilized and
         other similar information.
       </p>
-      <p className="font-bold text-xl text-mainDark my-4">
+      <p className="font-bold text-xl my-4">
         Non-personal identification information
       </p>
       <p>
@@ -51,7 +60,7 @@ export default function Privacy() {
         <li>
           <div className="flex items-center gap-4">
             <img className="w-5 object-contain" src="/minus.png" alt="" />
-            <p className="font-bold text-mainDark text-lg">
+            <p className="font-bold text-lg">
               To personalize user experience:{" "}
             </p>
           </div>
@@ -63,9 +72,7 @@ export default function Privacy() {
         <li>
           <div className="flex items-center gap-4">
             <img className="w-5 object-contain" src="/minus.png" alt="" />
-            <p className="font-bold text-mainDark text-lg">
-              To improve our site:
-            </p>
+            <p className="font-bold text-lg">To improve our site:</p>
           </div>
           <p>
             We may use feedback you provide to improve our products and
@@ -75,9 +82,7 @@ export default function Privacy() {
         <li>
           <div className="flex items-center gap-4">
             <img className="w-5 object-contain" src="/minus.png" alt="" />
-            <p className="font-bold text-mainDark text-lg">
-              To process payments:
-            </p>
+            <p className="font-bold text-lg">To process payments:</p>
           </div>
           <p>
             We may use the information Users provide about themselves when
@@ -89,7 +94,7 @@ export default function Privacy() {
         <li>
           <div className="flex items-center gap-4">
             <img className="w-5 object-contain" src="/minus.png" alt="" />
-            <p className="font-bold text-mainDark text-lg">
+            <p className="font-bold text-lg">
               To run a promotion, contest, survey or other Site feature:
             </p>
           </div>
@@ -101,9 +106,7 @@ export default function Privacy() {
         <li>
           <div className="flex items-center gap-4">
             <img className="w-5 object-contain" src="/minus.png" alt="" />
-            <p className="font-bold text-mainDark text-lg">
-              To send periodic emails:
-            </p>
+            <p className="font-bold text-lg">To send periodic emails:</p>
           </div>
           <p>
             We may use the email address to send User information and updates
@@ -117,9 +120,7 @@ export default function Privacy() {
           </p>
         </li>
       </ul>
-      <p className="font-bold text-xl text-mainDark my-4">
-        Web browser cookies
-      </p>
+      <p className="font-bold text-xl my-4">Web browser cookies</p>
       <p>
         Our Site may use “cookies” to enhance User experience. User’s web
         browser places cookies on their hard drive for record-keeping purposes
@@ -128,16 +129,14 @@ export default function Privacy() {
         being sent. If they do so, note that some parts of the Site may not
         function properly.
       </p>
-      <p className="font-bold text-xl text-mainDark my-4">
-        How we protect your information{" "}
-      </p>
+      <p className="font-bold text-xl my-4">How we protect your information </p>
       <p>
         We adopt appropriate data collection, storage and processing practices
         and security measures to protect against unauthorized access,
         alteration, disclosure or destruction of your personal information,
         username, password, transaction information and data stored on our Site.
       </p>
-      <p className="font-bold text-xl text-mainDark my-4">
+      <p className="font-bold text-xl my-4">
         Sharing your personal information
       </p>
       <p>
