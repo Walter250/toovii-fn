@@ -3,8 +3,14 @@ import ProfileMenu from "./Profile";
 import { useState } from "react";
 import { Spin as Hamburger } from "hamburger-react";
 import Menu from "./Menu";
+import { useSelector } from "react-redux";
 
 export default function Header() {
+  const theme = useSelector((state) => state.theme.value);
+  const themeStyles = theme.isDarkMode
+    ? "text-mainLight bg-mainDark"
+    : "text-mainDark bg-mainLight";
+
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
@@ -29,8 +35,10 @@ export default function Header() {
   return (
     <section
       onClick={closeMenus}
-      className={`flex justify-between items-center px-8 md:px-4 sm:px-1 text-mainLight border-b border-gray-700 ${
-        location.pathname === "/" ? "bg-mainDark/70" : "bg-mainDark"
+      className={`flex justify-between items-center px-8 md:px-4 sm:px-1 border-b border-gray-700 ${
+        location.pathname === "/"
+          ? "bg-mainDark/70 text-mainLight"
+          : `${themeStyles}`
       }`}
     >
       <Link to="/">

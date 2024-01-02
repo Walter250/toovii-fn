@@ -3,8 +3,12 @@ import Theme from "./Theme";
 
 export default function ProfileMenu() {
   const theme = useSelector((state) => state.theme.value);
+  const themeStyles = theme.isDarkMode
+    ? "text-mainLight bg-secDark"
+    : "text-mainDark bg-secLight";
+
   return (
-    <article className="bg-mainDark absolute top-20 md:top-16 sm:top-14 right-6 md:right-5 sm:right-4 w-1/4 lg:w-1/2 sm:w-4/5 rounded-3xl p-4 border border-mainYellow/30 flex flex-col gap-6 items-start z-40">
+    <article className={`${themeStyles} absolute top-20 md:top-16 sm:top-14 right-6 md:right-5 sm:right-4 w-1/4 lg:w-1/2 sm:w-4/5 rounded-3xl p-4 border border-mainYellow/30 flex flex-col gap-6 items-start z-40`}>
       <section className="flex items-center gap-4 border-b border-mainYellow py-4 w-full">
         <div className="w-12 h-12 bg-red-200 rounded-full">
           <img src="/user.png" alt="dummy profile" />
