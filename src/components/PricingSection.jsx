@@ -69,27 +69,19 @@ export default function PricingSection() {
           <section className="flex flex-col px-5 py-10 gap-7">
             <div className="flex items-center gap-4">
               <img className="w-7 object-contain" src="/dot.png" alt="tick" />
-              <p className="text-xl">1 dubbed movie/week</p>
+              <p className="text-xl">3 dubbed movie/week</p>
             </div>
             <div className="flex items-center gap-4">
               <img className="w-7 object-contain" src="/dot.png" alt="tick" />
-              <p className="text-xl">2 dubbed episodes/week</p>
-            </div>
-            <div className="flex items-center gap-4">
-              <img className="w-7 object-contain" src="/dot.png" alt="tick" />
-              <p className="text-xl">Football news</p>
-            </div>
-            <div className="flex items-center gap-4">
-              <img className="w-7 object-contain" src="/dot.png" alt="tick" />
-              <p className="text-xl">190+ Channels</p>
-            </div>
-            <div className="flex items-center gap-4">
-              <img className="w-7 object-contain" src="/dot.png" alt="tick" />
-              <p className="text-xl">2 dubbed episodes/week</p>
+              <p className="text-xl">5 dubbed episodes/week</p>
             </div>
             <div className="flex items-center gap-4">
               <img className="w-7 object-contain" src="/dot.png" alt="tick" />
               <p className="text-xl">Football news</p>
+            </div>
+            <div className="flex items-center gap-4">
+              <img className="w-7 object-contain" src="/dot.png" alt="tick" />
+              <p className="text-xl">300+ Channels</p>
             </div>
             <button
               className="flex items-center justify-center border border-mainYellow py-2 rounded-xl mt-3 gap-4"
