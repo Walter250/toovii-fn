@@ -67,8 +67,8 @@ export default function About() {
           <div
             className={`${
               theme.isDarkMode
-                ? "shadow-secLight/30 md:shadow-secLight/10"
-                : "shadow-secDark/30 md:shadow-secDark/20"
+                ? "shadow-secLight/10 md:shadow-secLight/10"
+                : "shadow-secDark/10 md:shadow-secDark/10"
             } w-1/3 flex justify-start items-center gap-6 shadow-xl rounded-2xl px-5 py-4 md:w-full`}
           >
             <div className="w-16 h-16 rounded-full bg-mainYellow grid place-content-center">
@@ -89,8 +89,8 @@ export default function About() {
           <div
             className={`${
               theme.isDarkMode
-                ? "shadow-secLight/30 md:shadow-secLight/10"
-                : "shadow-secDark/30 md:shadow-secDark/20"
+                ? "shadow-secLight/10 md:shadow-secLight/10"
+                : "shadow-secDark/10 md:shadow-secDark/10"
             } w-1/3 flex justify-start items-center gap-6 shadow-xl rounded-2xl px-5 py-4 md:w-full`}
           >
             <div className="w-16 h-16 rounded-full bg-mainYellow grid place-content-center">
@@ -111,8 +111,8 @@ export default function About() {
           <div
             className={`${
               theme.isDarkMode
-                ? "shadow-secLight/30 md:shadow-secLight/10"
-                : "shadow-secDark/30 md:shadow-secDark/20"
+                ? "shadow-secLight/10 md:shadow-secLight/10"
+                : "shadow-secDark/10 md:shadow-secDark/10"
             } w-1/3 flex justify-start items-center gap-6 shadow-xl rounded-2xl px-5 py-4 md:w-full`}
           >
             <div className="w-16 h-16 rounded-full bg-mainYellow grid place-content-center">

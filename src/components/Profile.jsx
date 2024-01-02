@@ -10,8 +10,8 @@ export default function ProfileMenu() {
           <img src="/user.png" alt="dummy profile" />
         </div>
         <div>
-          <p className="font-bold">Aristide Isingizwe</p>
-          <p>i.aristide08@gmail.com</p>
+          <p className="font-bold">Walter Iradukunda</p>
+          <p>walter.i@toovii.com</p>
         </div>
       </section>
       <button className="hover:bg-mainYellow/50 w-full text-left py-2 font-medium text-xl px-4 rounded-xl flex items-center gap-4">

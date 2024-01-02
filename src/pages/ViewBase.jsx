@@ -5,8 +5,14 @@ import { Spin as Hamburger } from "hamburger-react";
 import { useEffect } from "react";
 import { baseChannels } from "../assets/channels";
 import { channelTypes } from "../assets/channels";
+import { useSelector } from "react-redux";
 
 export default function ViewBase() {
+  const theme = useSelector((state) => state.theme.value);
+  const themeStyles = theme.isDarkMode
+    ? "text-mainLight bg-mainDark"
+    : "text-mainDark bg-mainLight";
+
   const channels = channelTypes.map((channel) => (
     <ChannelSection category="base" name={channel} />
   ));
@@ -16,7 +22,7 @@ export default function ViewBase() {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <article className="bg-mainDark text-mainLight pt-12">
+    <article className={`${themeStyles} pt-12`}>
       <section className="px-20 md:px-10 sm:px-6">
         <h1 className="font-bold text-4xl mb-4 text-center">Base</h1>
         <p className="text-center">
@@ -52,7 +58,6 @@ export default function ViewBase() {
         </section>
       </section>
       <StreamingSection />
-      <Hamburger />
     </article>
   );
 }

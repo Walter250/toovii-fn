@@ -1,10 +1,15 @@
 import { useState } from "react";
 import { baseChannels } from "../assets/channels";
 import { premChannels } from "../assets/channels";
-import { channelTypes } from "../assets/channels";
+import { useSelector } from "react-redux";
 
 /* eslint-disable react/prop-types */
 export default function ChannelSection({ name, category }) {
+  const theme = useSelector((state) => state.theme.value);
+  const themeStyles = theme.isDarkMode
+    ? "text-mainLight bg-secDark"
+    : "text-mainDark bg-secLight";
+
   const [isOpen, setIsOpen] = useState(false);
 
   const channels =
@@ -23,7 +28,7 @@ export default function ChannelSection({ name, category }) {
   return (
     channels.length > 0 && (
       <div
-        className="bg-secDark w-full flex flex-col gap-4 items-center py-6 transition-all duration-300 px-6"
+        className={`${themeStyles} w-full flex flex-col gap-4 items-center py-6 transition-all duration-300 px-6`}
         onClick={handleOpen}
       >
         <div className="flex justify-between w-full px-4">

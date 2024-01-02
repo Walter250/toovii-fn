@@ -3,8 +3,14 @@ import ChannelSection from "../components/ChannelsSection";
 import StreamingSection from "../components/StreamingSection";
 import { useEffect } from "react";
 import { channelTypes } from "../assets/channels";
+import { useSelector } from "react-redux";
 
 export default function ViewPrem() {
+  const theme = useSelector((state) => state.theme.value);
+  const themeStyles = theme.isDarkMode
+    ? "text-mainLight bg-mainDark"
+    : "text-mainDark bg-mainLight";
+
   const channels = channelTypes.map((channel) => (
     <ChannelSection category="prem" name={channel} />
   ));
@@ -14,7 +20,7 @@ export default function ViewPrem() {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <article className="bg-mainDark text-mainLight pt-12">
+    <article className={`${themeStyles} pt-12`}>
       <section className="px-20 md:px-10 sm:px-6">
         <h1 className="font-bold text-4xl mb-4 text-center">Premium</h1>
         <p className="text-center">
