@@ -35,7 +35,7 @@ export default function Footer() {
               offers.
             </p>
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-between w-1/3 md:w-full">
             <div className="flex flex-col">
               <p className="font-bold text-2xl mb-4">Links</p>
               <Link

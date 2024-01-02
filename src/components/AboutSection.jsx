@@ -44,7 +44,7 @@ export default function AboutSection() {
           <p className="text-lg">
             TooVii goes beyond boundaries. Our platform is meticulously crafted
             to deliver a seamless experience across all your devices. Whether
-            {"you're"} on your smartphone, tablet, laptop, or desktop, TooVii
+            {"you're"} on your smartphone, tablet, TooVii
             adapts effortlessly. Watch your favorite shows, movies, and more,
             with responsive design ensuring an unparalleled viewing experience,
             no matter the screen size. Your entertainment, your way, on every
