@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import Trustees from "../components/Trustees";
 
 export default function About() {
   const theme = useSelector((state) => state.theme.value);
@@ -136,111 +137,7 @@ export default function About() {
           alt="about team"
         />
       </article>
-      <article className="w-full px-20 md:px-10 sm:px-6 flex flex-col gap-8 items-center">
-        <section className="">
-          <p
-            className={`${
-              theme.isDarkMode ? "shadow-secLight/20" : "shadow-secDark/30"
-            } shadow-lg border border-gray-400 px-10 py-[6px] font-semibold text-center w-fit rounded-xl`}
-          >
-            Our Trustees
-          </p>
-        </section>
-        <p className="text-center w-4/5">
-          TooVii is proud to collaborate with a network of visionary sponsors
-          who share our commitment to revolutionizing entertainment. Their
-          support empowers us to bring you a premium streaming experience,
-          making quality content accessible to audiences worldwide.
-        </p>
-        <div className="flex justify-between w-full">
-          <img className="w-28 object-contain" src="/sharp.png" alt="logo" />
-          <img className="w-28 object-contain" src="/sharp.png" alt="logo" />
-          <img className="w-28 object-contain" src="/sharp.png" alt="logo" />
-          <img className="w-28 object-contain" src="/sharp.png" alt="logo" />
-        </div>
-      </article>
-      <article className="px-20 md:px-10 sm:px-6 flex flex-col items-center gap-10">
-        <section className="">
-          <p
-            className={`${
-              theme.isDarkMode ? "shadow-secLight/20" : "shadow-secDark/30"
-            } shadow-lg border border-gray-400 px-10 py-[6px] font-semibold text-center w-fit rounded-xl`}
-          >
-            Our Team
-          </p>
-        </section>
-
-        <section className="flex justify-between gap-8 w-full md:flex-col items-center">
-          <div className="flex justify-between gap-8 w-3/5 md:w-full sm:flex-col items-center">
-            <div className="h-60 w-4/6 sm:w-full flex flex-col gap-6 md:w-1/2">
-              <p className="text-4xl font-bold">
-                <span className="text-mainYellow">Team</span> Members
-              </p>
-              <p className="w-full text-justify">
-                Our team at TooVii is a tight-knit group of enthusiasts
-                dedicated to redefining entertainment. From tech wizards
-                ensuring seamless streaming to creative minds curating exclusive
-                content, each member plays a pivotal role in bringing you the
-                best in entertainment.
-              </p>
-            </div>
-            <div className="h-80 w-2/6 sm:w-full md:w-1/2 relative group">
-              <img
-                className="w-full h-full object-cover"
-                src="/member1.jpg"
-                alt=""
-              />
-              <div
-                className={`${
-                  theme.isDarkMode ? "bg-mainDark/30" : "bg-mainLight/30"
-                } w-full h-full bg-mainDark absolute top-0 left-0 hidden group-hover:grid place-content-center transition-all duration-200`}
-              >
-                {" "}
-                <div className="flex flex-col items-center">
-                  <p className="font-bold text-xl">Aristide Isingizwe</p>
-                  <p>Frontend Dev</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="flex justify-between gap-8 w-2/5 md:w-full sm:flex-col items-center">
-            <div className="h-80 w-1/2 sm:w-full relative group">
-              <img
-                className="w-full h-full object-cover"
-                src="/member1.jpg"
-                alt=""
-              />
-              <div
-                className={`${
-                  theme.isDarkMode ? "bg-mainDark/30" : "bg-mainLight/30"
-                } w-full h-full bg-mainDark absolute top-0 left-0 hidden place-content-center group-hover:grid transition-all duration-200`}
-              >
-                <div className="flex flex-col items-center">
-                  <p className="font-bold text-xl">Aristide Isingizwe</p>
-                  <p>Frontend Dev</p>
-                </div>
-              </div>
-            </div>
-            <div className="h-80 w-1/2 sm:w-full relative group">
-              <img
-                className="w-full h-full object-cover"
-                src="/member1.jpg"
-                alt=""
-              />
-              <div
-                className={`${
-                  theme.isDarkMode ? "bg-mainDark/30" : "bg-mainLight/30"
-                } w-full h-full bg-mainDark absolute top-0 left-0 hidden place-content-center group-hover:grid transition-all duration-200`}
-              >
-                <div className="flex flex-col items-center">
-                  <p className="font-bold text-xl">Aristide Isingizwe</p>
-                  <p>Frontend Dev</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </article>
+      <Trustees />
     </article>
   );
 }
