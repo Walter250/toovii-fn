@@ -14,10 +14,10 @@ export function loader() {
 }
 
 export default function Login() {
-  const [userInfo, setUserInfo] = useState({ username: "", password: "" });
+  const [userInfo, setUserInfo] = useState({ email: "", password: "" });
   const [isError, setIsError] = useState(false);
   const [formError, setFormError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const theme = useSelector((state) => state.theme.value);
@@ -34,7 +34,7 @@ export default function Login() {
 
   async function handleLogin(e) {
     e.preventDefault();
-    if (!userInfo.password || !userInfo.username) {
+    if (!userInfo.password || !userInfo.email) {
       setFormError(true);
     } else {
       setIsLoading(true);
@@ -49,11 +49,9 @@ export default function Login() {
         },
         body: formData,
       });
-      const userData = await response.json();
       setIsLoading(false);
-      if (response.status === 200) {
-        // localStorage.setItem("user", JSON.stringify(userData));
-        // return navigate("/feeds");
+      if (response.status === 201) {
+        return navigate("/");
       } else {
         setIsLoading(false);
         setIsError(true);
@@ -87,10 +85,10 @@ export default function Login() {
               className={`${
                 theme.isDarkMode ? "bg-mainDark" : "bg-mainLight"
               } outline-none rounded-xl px-4 py-2 w-full`}
-              type="text"
-              placeholder="Username"
+              type="email"
+              placeholder="Email"
               value={userInfo.username}
-              name="username"
+              name="email"
               onChange={(event) => handleFormChange(event)}
             />
             <input
