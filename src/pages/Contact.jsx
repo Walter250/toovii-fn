@@ -1,11 +1,86 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import url from "../../url";
 
 export default function ContactPage() {
+  const [messages, setMessages] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [firstnameError, setFirstnameError] = useState(false);
+  const [lastnameError, setLastnameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [phoneError, setPhoneError] = useState(false);
+  const [messageError, setMessageError] = useState(false);
+  const [, setGeneralError] = useState(false);
+
   const theme = useSelector((state) => state.theme.value);
   const themeStyles = theme.isDarkMode
     ? "text-mainLight bg-mainDark"
     : "text-mainDark bg-mainLight";
+
+  async function handlesubmit(event) {
+    event.preventDefault();
+    if (!checkerror()) return;
+
+    try {
+      const response = await fetch(`${url}/messages`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: { ...messages },
+      });
+
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+      setGeneralError(true);
+    }
+  }
+
+  function checkerror() {
+    if (!messages.firstname) {
+      setFirstnameError(true);
+      return false;
+    }
+    if (!messages.lastname) {
+      setLastnameError(true);
+      return false;
+    }
+    if (!messages.email) {
+      setEmailError(true);
+      return false;
+    }
+    if (!messages.phone) {
+      setPhoneError(true);
+      return false;
+    }
+    if (!messages.message) {
+      setMessageError(true);
+      return false;
+    }
+    return true;
+  }
+
+  function cancelErrors() {
+    setFirstnameError(false);
+    setLastnameError(false);
+    setEmailError(false);
+    setPhoneError(false);
+    setMessageError(false);
+    setGeneralError(false);
+  }
+
+  function handleFormChange(e) {
+    cancelErrors();
+    setMessages((prev) => {
+      return { ...prev, [e.target.name]: e.target.value };
+    });
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -38,7 +113,15 @@ export default function ContactPage() {
                   } py-2 px-4 placeholder:font-normal rounded-lg`}
                   placeholder="Firstname"
                   type="text"
+                  value={messages.firstname}
+                  name="firstname"
+                  onChange={handleFormChange}
                 />
+                {firstnameError && (
+                  <p className="text-red-500 text-sm font-normal">
+                    Firstname is required
+                  </p>
+                )}
               </label>
               <label className="flex flex-col w-1/2 font-semibold gap-2">
                 Lastname
@@ -48,7 +131,15 @@ export default function ContactPage() {
                   } py-2 px-4 placeholder:font-normal rounded-lg`}
                   placeholder="Lastname"
                   type="text"
+                  value={messages.lastname}
+                  name="lastname"
+                  onChange={handleFormChange}
                 />
+                {lastnameError && (
+                  <p className="text-red-500 text-sm font-normal">
+                    Lastname is required
+                  </p>
+                )}
               </label>
             </div>
             <div className="flex justify-between gap-4">
@@ -58,9 +149,17 @@ export default function ContactPage() {
                   className={`${
                     theme.isDarkMode ? "bg-mainDark" : "bg-mainLight"
                   } py-2 px-4 placeholder:font-normal rounded-lg`}
-                  placeholder="Emain"
+                  placeholder="Email"
                   type="email"
+                  value={messages.email}
+                  name="email"
+                  onChange={handleFormChange}
                 />
+                {emailError && (
+                  <p className="text-red-500 text-sm font-normal">
+                    Email is required
+                  </p>
+                )}
               </label>
               <label className="flex flex-col w-1/2 font-semibold gap-2">
                 Phone Number
@@ -70,7 +169,15 @@ export default function ContactPage() {
                   } py-2 px-4 placeholder:font-normal rounded-lg`}
                   placeholder="Phone Number"
                   type="text"
+                  value={messages.phone}
+                  name="phone"
+                  onChange={handleFormChange}
                 />
+                {phoneError && (
+                  <p className="text-red-500 text-sm font-normal">
+                    Phone number is required
+                  </p>
+                )}
               </label>
             </div>
             <label className="font-semibold">
@@ -81,9 +188,19 @@ export default function ContactPage() {
                 } w-full h-40 placeholder:font-normal px-4 py-2 rounded-lg mt-2`}
                 name="message"
                 placeholder="Write your message"
+                value={messages.message}
+                onChange={handleFormChange}
               ></textarea>
+              {messageError && (
+                <p className="text-red-500 text-sm font-normal">
+                  Message is required
+                </p>
+              )}
             </label>
-            <button className="w-full py-2 bg-mainYellow font-bold text-xl rounded-full">
+            <button
+              className="w-full py-2 bg-mainYellow font-bold text-xl rounded-full"
+              onClick={handlesubmit}
+            >
               Send
             </button>
           </form>
@@ -103,12 +220,12 @@ export default function ContactPage() {
           <div className="flex flex-col font-semibold items-center">
             <img className="w-12" src="/mail.png" alt="" />
             <p>Email</p>
-            <p>Contact@toovii.com</p>
+            <p>info@toovii.com</p>
           </div>
           <div className="flex flex-col font-semibold items-center">
             <img className="w-12" src="/phone.png" alt="" />
             <p>Phone</p>
-            <p>+250780000000</p>
+            <p>+250785478021</p>
           </div>
         </div>
         <div className="flex justify-between items-center">
