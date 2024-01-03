@@ -16,6 +16,7 @@ export default function ContactPage() {
   const [phoneError, setPhoneError] = useState(false);
   const [messageError, setMessageError] = useState(false);
   const [, setGeneralError] = useState(false);
+  const [, setIsLoading] = useState(false);
 
   const theme = useSelector((state) => state.theme.value);
   const themeStyles = theme.isDarkMode
@@ -27,17 +28,29 @@ export default function ContactPage() {
     if (!checkerror()) return;
 
     try {
+      const formData = new URLSearchParams();
+      for (const [key, value] of Object.entries(messages)) {
+        formData.append(key, value);
+      }
       const response = await fetch(`${url}/messages`, {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: { ...messages },
+        body: formData,
       });
 
-      console.log(response);
+      setIsLoading(false);
+      if (response.status === 201) {
+        setMessages({
+          firstname: "",
+          lastname: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      }
     } catch (error) {
-      console.log(error);
       setGeneralError(true);
     }
   }

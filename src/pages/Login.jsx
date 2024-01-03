@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, redirect, useNavigate } from "react-router-dom";
+import url from "../../url";
 // import LoadingSpinner from "../assets/LoadingSpinner";
 
 export function loader() {
@@ -33,31 +34,31 @@ export default function Login() {
 
   async function handleLogin(e) {
     e.preventDefault();
-    // if (!userInfo.password || !userInfo.username) {
-    //   setFormError(true);
-    // } else {
-    //   setIsLoading(true);
-    //   const formData = new URLSearchParams();
-    //   for (const [key, value] of Object.entries(userInfo)) {
-    //     formData.append(key, value);
-    //   }
-    //   const response = await fetch("https://samplw/login", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/x-www-form-urlencoded",
-    //     },
-    //     body: formData,
-    //   });
-    //   const userData = await response.json();
-    //   setIsLoading(false);
-    //   if (response.status === 200) {
-    //     localStorage.setItem("user", JSON.stringify(userData));
-    //     return navigate("/feeds");
-    //   } else {
-    //     setIsLoading(false);
-    //     setIsError(true);
-    //   }
-    // }
+    if (!userInfo.password || !userInfo.username) {
+      setFormError(true);
+    } else {
+      setIsLoading(true);
+      const formData = new URLSearchParams();
+      for (const [key, value] of Object.entries(userInfo)) {
+        formData.append(key, value);
+      }
+      const response = await fetch(`${url}/auth/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formData,
+      });
+      const userData = await response.json();
+      setIsLoading(false);
+      if (response.status === 200) {
+        // localStorage.setItem("user", JSON.stringify(userData));
+        // return navigate("/feeds");
+      } else {
+        setIsLoading(false);
+        setIsError(true);
+      }
+    }
   }
 
   useEffect(() => {
