@@ -5,10 +5,12 @@ import "./index.css";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import themeReducer from "./features/theme.js";
+import userReducer from "./features/user.js";
 
 const store = configureStore({
   reducer: {
     theme: themeReducer,
+    user: userReducer,
   },
 });
 

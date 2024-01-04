@@ -1,26 +1,24 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { Link, redirect, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import url from "../../url";
-// import LoadingSpinner from "../assets/LoadingSpinner";
-
-export function loader() {
-  const user = JSON.parse(localStorage.getItem("user"));
-  if (user) {
-    throw redirect("/feeds");
-  }
-  return null;
-}
+import Spinner from "../components/Spinner";
+import { login } from "../features/user";
 
 export default function Login() {
   const [userInfo, setUserInfo] = useState({ email: "", password: "" });
   const [isError, setIsError] = useState(false);
   const [formError, setFormError] = useState(false);
-  const [, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const theme = useSelector((state) => state.theme.value);
+
   const themeStyles = theme.isDarkMode
     ? "text-mainLight bg-mainDark"
     : "text-mainDark bg-mainLight";
@@ -49,6 +47,8 @@ export default function Login() {
         },
         body: formData,
       });
+      const user = await response.json();
+      dispatch(login({ isLogged: true, currentUser: user }));
       setIsLoading(false);
       if (response.status === 201) {
         return navigate("/");
@@ -59,11 +59,8 @@ export default function Login() {
     }
   }
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
-    <article className={`${themeStyles} w-full h-[90vh] py-12 md:h-[100%]`}>
+    <article className={`${themeStyles} w-full h-[93vh] pt-8 md:h-[100%]`}>
       <article
         className={`${loginStyles} flex max-h-[85vh] text-dark-200 rounded-2xl overflow-hidden w-4/6 md:w-11/12 mx-auto pb-20 pt-4 gap-12`}
       >
@@ -105,7 +102,7 @@ export default function Login() {
               className="bg-mainYellow text-light-200 font-bold text-xl rounded-xl px-4 py-2 w-full grid place-content-center"
               onClick={handleLogin}
             >
-              Log In
+              {isLoading ? <Spinner /> : "Log in"}
             </button>
           </form>
           <p>
