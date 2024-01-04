@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import url from "../../url";
+import Spinner from "../components/Spinner";
+import { toast } from "react-toastify";
 
 export default function ContactPage() {
   const [messages, setMessages] = useState({
@@ -16,7 +18,7 @@ export default function ContactPage() {
   const [phoneError, setPhoneError] = useState(false);
   const [messageError, setMessageError] = useState(false);
   const [, setGeneralError] = useState(false);
-  const [, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const theme = useSelector((state) => state.theme.value);
   const themeStyles = theme.isDarkMode
@@ -26,6 +28,7 @@ export default function ContactPage() {
   async function handlesubmit(event) {
     event.preventDefault();
     if (!checkerror()) return;
+    setIsLoading(true);
 
     try {
       const formData = new URLSearchParams();
@@ -41,6 +44,16 @@ export default function ContactPage() {
       });
 
       setIsLoading(false);
+      toast.success("Message Sent ", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
       if (response.status === 201) {
         setMessages({
           firstname: "",
@@ -211,10 +224,10 @@ export default function ContactPage() {
               )}
             </label>
             <button
-              className="w-full py-2 bg-mainYellow font-bold text-xl rounded-full"
+              className="w-full py-2 bg-mainYellow font-bold text-xl rounded-full grid place-content-center"
               onClick={handlesubmit}
             >
-              Send
+              {isLoading ? <Spinner /> : "Send"}
             </button>
           </form>
         </section>

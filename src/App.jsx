@@ -18,6 +18,8 @@ import ViewBase from "./pages/ViewBase";
 import ViewPrem from "./pages/ViewPrem";
 import Payment from "./pages/Payment";
 import About from "./pages/About";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -42,5 +44,10 @@ const router = createBrowserRouter(
   )
 );
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <div>
+      <RouterProvider router={router} />
+      <ToastContainer />
+    </div>
+  );
 }
