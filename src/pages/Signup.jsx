@@ -1,55 +1,54 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Link, redirect, useNavigate } from "react-router-dom";
-// import LoadingSpinner from "../assets/LoadingSpinner";
-
-export function loader() {
-  const user = JSON.parse(localStorage.getItem("user"));
-  if (user) {
-    throw redirect("/feeds");
-  }
-  return null;
-}
+import { Link, useNavigate } from "react-router-dom";
+import url from "../../url";
+import Spinner from "../components/Spinner";
 
 export default function Signup() {
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [formError, setFormError] = useState(false);
   const [userInfo, setUserInfo] = useState({
+    firstname: "",
+    lastname: "",
     username: "",
-    password: "",
     email: "",
+    dateOfBirth: "",
+    phone: "",
+    affiliateReference: "",
+    password: "",
   });
   const navigate = useNavigate();
+
   function handleFormChange(e) {
     setUserInfo((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
   async function handleSignup(e) {
     e.preventDefault();
-    // if (!userInfo.email || !userInfo.password || !userInfo.username) {
-    //   setFormError(true);
-    // } else {
-    //   setIsLoading(true);
-    //   const formData = new URLSearchParams();
-    //   for (const [key, value] of Object.entries(userInfo)) {
-    //     formData.append(key, value);
-    //   }
-    //   const response = await fetch("https://sample/signup", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/x-www-form-urlencoded",
-    //     },
-    //     body: formData,
-    //   });
-    //   setIsLoading(false);
-    //   if (response.status === 201) return navigate("/login");
-    //   else {
-    //     setIsLoading(false);
-    //     setIsError(true);
-    //   }
-    // }
+    if (!userInfo.email || !userInfo.password || !userInfo.username) {
+      setFormError(true);
+    } else {
+      setIsLoading(true);
+      const formData = new URLSearchParams();
+      for (const [key, value] of Object.entries(userInfo)) {
+        formData.append(key, value);
+      }
+      const response = await fetch(`${url}/auth/signup`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formData,
+      });
+      setIsLoading(false);
+      if (response.status === 201) return navigate("/login");
+      else {
+        setIsLoading(false);
+        setIsError(true);
+      }
+    }
   }
 
   const theme = useSelector((state) => state.theme.value);
@@ -116,7 +115,7 @@ export default function Signup() {
               className="bg-mainYellow text-light-200 mx-auto font-bold text-xl rounded-xl px-4 py-2 w-full grid place-content-center"
               onClick={handleSignup}
             >
-              Sign Up
+              {isLoading ? <Spinner /> : "Sign Up"}
             </button>
           </form>
           <p>
