@@ -18,6 +18,7 @@ export default function Signup() {
     phone: "",
     affiliateReference: "",
     password: "",
+    confirmPassword:""
   });
   const navigate = useNavigate();
 
@@ -81,16 +82,28 @@ export default function Signup() {
             {formError && (
               <p className="text-center text-red-700">Required Input Missing</p>
             )}
-            <input
-              className={`${
-                theme.isDarkMode ? "bg-mainDark" : "bg-mainLight"
-              } outline-none rounded-xl px-4 py-2 w-full`}
-              type="email"
-              placeholder="Email"
-              name="email"
-              onChange={(event) => handleFormChange(event)}
-              value={userInfo.email}
-            />
+            <div className="flex gap-4">
+              <input
+                className={`${
+                  theme.isDarkMode ? "bg-mainDark" : "bg-mainLight"
+                } outline-none rounded-xl px-4 py-2 w-full`}
+                type="texxt"
+                placeholder="Firstname"
+                name="firstname"
+                onChange={(event) => handleFormChange(event)}
+                value={userInfo.firstname}
+              />
+              <input
+                className={`${
+                  theme.isDarkMode ? "bg-mainDark" : "bg-mainLight"
+                } outline-none rounded-xl px-4 py-2 w-full`}
+                type="text"
+                placeholder="Lastname"
+                name="lastname"
+                onChange={(event) => handleFormChange(event)}
+                value={userInfo.lastname}
+              />
+            </div>
             <input
               className={`${
                 theme.isDarkMode ? "bg-mainDark" : "bg-mainLight"
