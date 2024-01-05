@@ -12,7 +12,7 @@ export default function Hero() {
         bring your favorite content to your fingertips.
       </p>
       <Link
-        to="/signup"
+        to="https://cloudtv.akamaized.net/donotremove/tvms/webtv/v10.0.31/index.html?packageid=com.toovii.toovii/"
         className="font-semibold text-2xl bg-mainYellow px-12 py-2 rounded-xl"
       >
         Get Started

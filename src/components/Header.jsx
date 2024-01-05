@@ -87,7 +87,7 @@ export default function Header() {
               isActive ? "text-mainYellow" : ""
             } font-semibold hover:text-mainYellow`
           }
-          to="/https://cloudtv.akamaized.net/donotremove/tvms/webtv/v10.0.31/index.html?packageid=com.toovii.toovii/"
+          to="https://cloudtv.akamaized.net/donotremove/tvms/webtv/v10.0.31/index.html?packageid=com.toovii.toovii/"
           target="_blank"
         >
           WebTV
