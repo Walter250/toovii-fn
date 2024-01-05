@@ -1,9 +1,7 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ChannelSection from "../components/ChannelsSection";
 import StreamingSection from "../components/StreamingSection";
-import { Spin as Hamburger } from "hamburger-react";
 import { useEffect } from "react";
-import { baseChannels } from "../assets/channels";
 import { channelTypes } from "../assets/channels";
 import { useSelector } from "react-redux";
 
@@ -14,10 +12,8 @@ export default function ViewBase() {
     : "text-mainDark bg-mainLight";
 
   const channels = channelTypes.map((channel) => (
-    <ChannelSection category="base" name={channel} />
+    <ChannelSection key={channel} category="base" name={channel} />
   ));
-
-  const navigate = useNavigate();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -47,6 +43,7 @@ export default function ViewBase() {
             <Link
               to="https://portal.tvms.io/?o=shop&h=eyJjbGllbnQiOiJUb292aWkiLCJkZXBsb3ltZW50IjoidG9vdmlpLWNvbnRlbnQiLCJzZXJ2aWNlIjoidG9vdmlpLWN1c3RvbWVycyIsInBvcnRhbElkIjoiNjU4NDQ3ZDY5OTZhNDdkMGJmY2U3YjdmIn0="
               className="bg-mainYellow px-10 py-2 rounded-xl font-bold text-xl"
+              target="_blank"
             >
               SUBSCRIBE
             </Link>
