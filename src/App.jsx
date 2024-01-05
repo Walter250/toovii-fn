@@ -9,14 +9,11 @@ import MainLayout from "./components/MainLayout";
 import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
 import Faq from "./pages/Faq";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
 import PackagesPage from "./pages/PackagesPage";
 import Privacy from "./pages/Privacy";
 import Channels from "./pages/Channels";
 import ViewBase from "./pages/ViewBase";
 import ViewPrem from "./pages/ViewPrem";
-import Payment from "./pages/Payment";
 import About from "./pages/About";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -29,12 +26,9 @@ const router = createBrowserRouter(
         <Route path="contact" element={<Contact />} />
         <Route path="about" element={<About />} />
         <Route path="faq" element={<Faq />} />
-        <Route path="login" element={<Login />} />
-        <Route path="signup" element={<Signup />} />
         <Route path="packages" element={<PackagesPage />} />
         <Route path="packages/base" element={<ViewBase />} />
         <Route path="packages/prem" element={<ViewPrem />} />
-        <Route path="payment" element={<Payment />} />
         <Route path="channels" element={<Channels />} />
         <Route path="privacy" element={<Privacy />} />
       </Route>
