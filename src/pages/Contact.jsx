@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
-import url from "../../url";
 import Spinner from "../components/Spinner";
 import { toast } from "react-toastify";
+import emailjs from "@emailjs/browser";
 
 export default function ContactPage() {
+  const form = useRef();
   const [messages, setMessages] = useState({
     firstname: "",
     lastname: "",
@@ -30,42 +31,55 @@ export default function ContactPage() {
     if (!checkerror()) return;
     setIsLoading(true);
 
-    try {
-      const formData = new URLSearchParams();
-      for (const [key, value] of Object.entries(messages)) {
-        formData.append(key, value);
-      }
-      const response = await fetch(`${url}/messages`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+    emailjs
+      .sendForm(
+        "service_4oco8nt",
+        "template_zpz9sk8",
+        form.current,
+        "ICgS-BzN1WWH9m9yu"
+      )
+      .then(
+        () => {
+          setMessages({
+            firstname: "",
+            lastname: "",
+            email: "",
+            phone: "",
+            message: "",
+          });
+          toast.success("Message Sent ", {
+            position: "top-center",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
+          setIsLoading(false);
         },
-        body: formData,
-      });
-
-      setIsLoading(false);
-      toast.success("Message Sent ", {
-        position: "top-center",
-        autoClose: 1000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
-      if (response.status === 201) {
-        setMessages({
-          firstname: "",
-          lastname: "",
-          email: "",
-          phone: "",
-          message: "",
-        });
-      }
-    } catch (error) {
-      setGeneralError(true);
-    }
+        () => {
+          setMessages({
+            firstname: "",
+            lastname: "",
+            email: "",
+            phone: "",
+            message: "",
+          });
+          toast.error("Sorry message not sent, try again", {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
+          setGeneralError(true);
+        }
+      );
   }
 
   function checkerror() {
@@ -129,7 +143,7 @@ export default function ContactPage() {
             theme.isDarkMode ? "bg-secDark" : "bg-secLight"
           } w-1/2 md:w-full p-6 my-auto`}
         >
-          <form className="flex flex-col gap-6 w-full">
+          <form className="flex flex-col gap-6 w-full" ref={form}>
             <div className="flex justify-between gap-4">
               <label className="flex flex-col w-1/2 font-semibold gap-2">
                 Firstname
