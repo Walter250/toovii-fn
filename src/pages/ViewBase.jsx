@@ -21,11 +21,11 @@ export default function ViewBase() {
     <article className={`${themeStyles} pt-12`}>
       <section className="px-20 md:px-10 sm:px-6">
         <h1 className="font-bold text-4xl mb-4 text-center">Base</h1>
-        <p className="text-center">
-          The best entertainment for the whole family with Novelas TV, Nollywood
-          TV or National Geographic
-          <br />
-          or Disney Channel and LEAGUE 1 UBER EATS for sports fans!
+        <p className="text-center w-5/6 mx-auto">
+          Dive into a world of entertainment with our Base Subscription! Enjoy a
+          curated selection of must-watch shows, movies, and exclusive content.
+          Elevate your streaming experience without the fuss. Your gateway to
+          entertainment awaits!
         </p>
         <section className="w-full h-72 mt-20 flex md:h-[32rem] md:flex-col">
           <img

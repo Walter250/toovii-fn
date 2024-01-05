@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 export default function StreamingSection() {
   const theme = useSelector((state) => state.theme.value);
@@ -8,7 +9,17 @@ export default function StreamingSection() {
 
   return (
     <article className={`${themeStyles} py-16`}>
-      <h1 className="font-bold text-5xl text-center mb-16">Now Streaming</h1>
+      <div className="flex items-center justify-between px-20 md:px-10 sm:px-6 sm:justify-center mb-16">
+        <div className="w-40 md:hidden"></div>
+        <h1 className="font-bold text-4xl sm:text-4xl">Now Streaming</h1>
+        <Link
+          to="https://portal.tvms.io/?o=shop&h=eyJjbGllbnQiOiJUb292aWkiLCJkZXBsb3ltZW50IjoidG9vdmlpLWNvbnRlbnQiLCJzZXJ2aWNlIjoidG9vdmlpLWN1c3RvbWVycyIsInBvcnRhbElkIjoiNjU4NDQ3ZDY5OTZhNDdkMGJmY2U3YjdmIn0="
+          className="bg-mainYellow px-10 py-2 rounded-xl font-bold text-xl sm:hidden"
+          target="_blank"
+        >
+          Start Watching
+        </Link>
+      </div>
       <article className="grid grid-cols-4 grid-rows-2 px-20 gap-6 md:grid-cols-1 md:grid-rows-5 md:px-8">
         <section className="col-span-2 h-80 rounded-xl overflow-hidden md:col-span-1 md:row-span-1 md:w-full md:h-96">
           <img className="w-full h-full object-cover" src="/3.jpg" alt="" />

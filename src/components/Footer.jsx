@@ -40,6 +40,13 @@ export default function Footer() {
               <p className="font-bold text-2xl mb-4">Links</p>
               <Link
                 className="hover:text-mainYellow hover:underline"
+                to="https://portal.tvms.io/"
+                target="_blank"
+              >
+                Login/Signup
+              </Link>
+              <Link
+                className="hover:text-mainYellow hover:underline"
                 to="/about"
               >
                 About

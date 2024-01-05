@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ChannelSection from "../components/ChannelsSection";
 import StreamingSection from "../components/StreamingSection";
 import { useEffect } from "react";
@@ -12,10 +12,9 @@ export default function ViewPrem() {
     : "text-mainDark bg-mainLight";
 
   const channels = channelTypes.map((channel) => (
-    <ChannelSection category="prem" name={channel} />
+    <ChannelSection key={channel} category="prem" name={channel} />
   ));
 
-  const navigate = useNavigate();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -23,9 +22,12 @@ export default function ViewPrem() {
     <article className={`${themeStyles} pt-12`}>
       <section className="px-20 md:px-10 sm:px-6">
         <h1 className="font-bold text-4xl mb-4 text-center">Premium</h1>
-        <p className="text-center">
-          The most complete package with the best of entertainment, sport and
-          all TooVii channels!
+        <p className="text-center w-5/6 mx-auto">
+          Experience streaming like never before with our Premium Subscription!
+          Unlock a treasure trove of premium content, including blockbuster
+          movies, exclusive series, and live events. Elevate your entertainment
+          journey to the next level. Upgrade to premium, because exceptional
+          content deserves an exceptional experience!
         </p>
         <section className="w-full h-72 mt-20 flex md:h-[32rem] md:flex-col">
           <img

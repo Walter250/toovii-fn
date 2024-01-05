@@ -45,7 +45,7 @@ export default function PricingSection() {
               onClick={() => navigate("/packages/base")}
             >
               <img src="/3d.png" alt="start" />
-              <p className="font-semibold text-xl">Get Started</p>
+              <p className="font-semibold text-xl">Learn More</p>
             </button>
           </section>
           <div
@@ -88,7 +88,7 @@ export default function PricingSection() {
               onClick={() => navigate("/packages/prem")}
             >
               <img src="/cells.png" alt="start" />
-              <p className="font-semibold text-xl">Get Started</p>
+              <p className="font-semibold text-xl">Learn More</p>
             </button>
           </section>
           <div
