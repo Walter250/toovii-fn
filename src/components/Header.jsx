@@ -42,16 +42,6 @@ export default function Header() {
 
       <div className="flex justify-between items-center gap-6 md:hidden">
         <NavLink
-          to="/"
-          className={({ isActive }) =>
-            `${
-              isActive ? "text-mainYellow" : ""
-            } font-semibold hover:text-mainYellow`
-          }
-        >
-          Home
-        </NavLink>
-        <NavLink
           to="/about"
           className={({ isActive }) =>
             `${
@@ -82,13 +72,22 @@ export default function Header() {
           Packages
         </NavLink>
         <NavLink
+          to="/cart"
           className={({ isActive }) =>
             `${
               isActive ? "text-mainYellow" : ""
             } font-semibold hover:text-mainYellow`
           }
-          to="https://cloudtv.akamaized.net/donotremove/tvms/webtv/v10.0.31/index.html?packageid=com.toovii.toovii/"
-          target="_blank"
+        >
+          Cart
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            `${
+              isActive ? "text-mainYellow" : ""
+            } font-semibold hover:text-mainYellow`
+          }
+          to="/webtv"
         >
           WebTV
         </NavLink>
@@ -115,11 +114,10 @@ export default function Header() {
       </div>
       <div className="flex justify-between items-center gap-6 md:gap-4 sm:gap-2">
         <Link
-          to="https://portal.tvms.io/?o=shop&h=eyJjbGllbnQiOiJUb292aWkiLCJkZXBsb3ltZW50IjoidG9vdmlpLWNvbnRlbnQiLCJzZXJ2aWNlIjoidG9vdmlpLWN1c3RvbWVycyIsInBvcnRhbElkIjoiNjU4NDQ3ZDY5OTZhNDdkMGJmY2U3YjdmIn0="
+          to="/portal"
           className="bg-mainYellow px-8 py-2 rounded-lg font-bold sm:hidden"
-          target="_blank"
         >
-          Join
+          Login
         </Link>
         <Theme />
         <div className="hidden md:block z-50" onClick={handleMenu}>

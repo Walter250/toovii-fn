@@ -13,7 +13,7 @@ export default function Footer() {
         </p>
         <Link
           className="px-10 py-2 bg-mainDark text-mainLight rounded-xl font-semibold"
-          to="https://portal.tvms.io/?o=shop&h=eyJjbGllbnQiOiJUb292aWkiLCJkZXBsb3ltZW50IjoidG9vdmlpLWNvbnRlbnQiLCJzZXJ2aWNlIjoidG9vdmlpLWN1c3RvbWVycyIsInBvcnRhbElkIjoiNjU4NDQ3ZDY5OTZhNDdkMGJmY2U3YjdmIn0="
+          to="/cart"
         >
           Get Started
         </Link>
@@ -40,8 +40,7 @@ export default function Footer() {
               <p className="font-bold text-2xl mb-4">Links</p>
               <Link
                 className="hover:text-mainYellow hover:underline"
-                to="https://portal.tvms.io/"
-                target="_blank"
+                to="/portal"
               >
                 Login/Signup
               </Link>

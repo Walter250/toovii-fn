@@ -13,9 +13,8 @@ export default function StreamingSection() {
         <div className="w-40 md:hidden"></div>
         <h1 className="font-bold text-4xl sm:text-4xl">Now Streaming</h1>
         <Link
-          to="https://portal.tvms.io/?o=shop&h=eyJjbGllbnQiOiJUb292aWkiLCJkZXBsb3ltZW50IjoidG9vdmlpLWNvbnRlbnQiLCJzZXJ2aWNlIjoidG9vdmlpLWN1c3RvbWVycyIsInBvcnRhbElkIjoiNjU4NDQ3ZDY5OTZhNDdkMGJmY2U3YjdmIn0="
+          to="/webtv"
           className="bg-mainYellow px-10 py-2 rounded-xl font-bold text-xl sm:hidden"
-          target="_blank"
         >
           Start Watching
         </Link>

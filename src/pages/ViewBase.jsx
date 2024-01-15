@@ -41,7 +41,7 @@ export default function ViewBase() {
               <span className="font-bold text-3xl">3000</span> RWF/MONTH
             </p>
             <Link
-              to="https://portal.tvms.io/?o=shop&h=eyJjbGllbnQiOiJUb292aWkiLCJkZXBsb3ltZW50IjoidG9vdmlpLWNvbnRlbnQiLCJzZXJ2aWNlIjoidG9vdmlpLWN1c3RvbWVycyIsInBvcnRhbElkIjoiNjU4NDQ3ZDY5OTZhNDdkMGJmY2U3YjdmIn0="
+              to="/cart"
               className="bg-mainYellow px-10 py-2 rounded-xl font-bold text-xl"
               target="_blank"
             >

@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 export default function Cart() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <article className="h-screen w-full">
       <iframe
