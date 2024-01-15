@@ -17,6 +17,9 @@ import ViewPrem from "./pages/ViewPrem";
 import About from "./pages/About";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Cart from "./pages/Cart";
+import Webtv from "./pages/Webtv";
+import Login from "./pages/Login";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -31,6 +34,9 @@ const router = createBrowserRouter(
         <Route path="packages/prem" element={<ViewPrem />} />
         <Route path="channels" element={<Channels />} />
         <Route path="privacy" element={<Privacy />} />
+        <Route path="portal" element={<Login />} />
+        <Route path="webtv" element={<Webtv />} />
+        <Route path="cart" element={<Cart />} />
       </Route>
 
       <Route path="*" element={<NotFound />} />
