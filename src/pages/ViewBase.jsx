@@ -43,7 +43,6 @@ export default function ViewBase() {
             <Link
               to="/cart"
               className="bg-mainYellow px-10 py-2 rounded-xl font-bold text-xl"
-              target="_blank"
             >
               SUBSCRIBE
             </Link>
