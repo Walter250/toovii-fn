@@ -15,7 +15,7 @@ export default function Hero() {
         to="/cart"
         className="font-semibold text-2xl bg-mainYellow px-12 py-2 rounded-xl"
       >
-        Get Started
+        Join Now
       </Link>
       <video
         className="w-full object-cover h-[120vh] absolute -top-[20vh] right-0 left-0 -z-10"
