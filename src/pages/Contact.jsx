@@ -33,10 +33,10 @@ export default function ContactPage() {
 
     emailjs
       .sendForm(
-        "service_4oco8nt",
-        "template_zpz9sk8",
+        "service_68l50r9",
+        "template_ku415cn",
         form.current,
-        "ICgS-BzN1WWH9m9yu"
+        "E0z4beJwjYyTgZaaz"
       )
       .then(
         () => {
