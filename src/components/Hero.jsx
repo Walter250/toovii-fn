@@ -18,7 +18,7 @@ export default function Hero() {
         Join Now
       </Link>
       <video
-        className="w-full object-cover h-[120vh] absolute -top-[20vh] right-0 left-0 -z-10"
+        className="w-full object-cover h-[120vh] absolute -top-[20vh] right-0 left-0 -z-10 hero"
         autoPlay
         muted
         loop
